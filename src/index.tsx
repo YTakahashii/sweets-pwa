@@ -11,7 +11,7 @@ ReactDOM.render(
 
 window.addEventListener('touchmove', event => {
   event.preventDefault();
-});
+}, true);
 
 /*
 var textarea = document.getElementById('textarea');
