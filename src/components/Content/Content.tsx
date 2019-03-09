@@ -5,7 +5,7 @@ const styles = (theme: Theme) => createStyles({
     root: {
         width: '100%',
         flexGrow: 1,
-        maxHeight: 650,
+        maxHeight: '85vh',
         overflow: 'scroll'
     },
 });
