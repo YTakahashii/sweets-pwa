@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "函館スイーツPWA",
+  "name": "これでリジェクトされない！",
   "icons": [
     {
       "src": "favicon.ico",
