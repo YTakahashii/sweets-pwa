@@ -13,7 +13,6 @@ const styles = (theme: Theme) => createStyles({
         zIndex: theme.zIndex.drawer + 1,
     },
     toolbar: {
-        flex: 1,
         display: 'flex',
         justifyContent: 'space-between',
     }

@@ -11,7 +11,7 @@ const styles = () => createStyles({
         marginTop: 'auto',
         display: 'flex',
         justifyContent: 'space-around',
-        width: '100%'
+        width: '100%',
     }
 });
 
