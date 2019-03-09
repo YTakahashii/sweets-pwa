@@ -12,7 +12,7 @@ const styles = () => createStyles({
         display: 'flex',
         justifyContent: 'space-around',
         width: '100%'
-    },
+    }
 });
 
 type MyBottomNavigationProps = WithStyles<typeof styles>;
