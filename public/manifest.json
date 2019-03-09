@@ -6,10 +6,15 @@
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "icon.ping",
+      "sizes": "750x750",
+      "type": "image/ong"
     }
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#3498DB",
   "background_color": "#ffffff"
 }
