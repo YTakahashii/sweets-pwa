@@ -5,9 +5,9 @@ const styles = (theme: Theme) => createStyles({
     root: {
         position: 'relative',
         width: '100vw',
+        height: '86vh',
         overflow: 'scroll',
         background: '#1abc9c',
-        paddingTop: '10vh'
     },
 });
 
