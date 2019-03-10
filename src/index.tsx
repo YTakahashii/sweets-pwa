@@ -13,6 +13,7 @@ window.addEventListener('touchmove', event => {
   event.preventDefault();
 }, true);
 
+document.ontouchmove = e => e.preventDefault();
 /*
 var textarea = document.getElementById('textarea');
 textarea.scrollTop = 1;
