@@ -11,8 +11,14 @@ const styles = (theme: Theme) => createStyles({
     root: {
         background: '#FFFFFF',
         zIndex: theme.zIndex.drawer + 1,
+        // position: 'fixed',
+        // top: 0,
+        // left: 0,
+        // width: '100%',
+        // height: '6vh'
     },
     toolbar: {
+        margin: 'auto',
         display: 'flex',
         justifyContent: 'space-between',
     }
@@ -29,7 +35,7 @@ const Navigationbar = (props: NavigationbarProps) => {
                 <IconButton color="primary">
                     <InfoIcon />
                 </IconButton>
-                <img src={logo} alt='logo' height={45} />
+                <img src={logo} alt='logo' width='30%' />
                 <IconButton color="primary">
                     <SearchIcon />
                 </IconButton>
