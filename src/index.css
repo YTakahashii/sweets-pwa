@@ -5,4 +5,5 @@ body {
   overflow: hidden;
   position: fixed;
   -webkit-user-select: none;
+  -webkit-overflow-scrolling: touch;
 }
