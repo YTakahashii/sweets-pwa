@@ -1,8 +1,9 @@
 import * as React from 'react';
 import MyBottomNavigation from '../BottomNavigation/BottomNavigation';
 import Navigationbar from '../Navigationbar/Navigationbar';
-import Content from '../Content/Content';
 import NavigationControllerState, { ScreenState } from './NavigationControllerState';
+import Home from '../Home/Home';
+import { Typography } from '@material-ui/core';
 
 export default class NavigationController extends React.Component<any, NavigationControllerState> {
     constructor(props: any) {
@@ -19,7 +20,29 @@ export default class NavigationController extends React.Component<any, Navigatio
                 <Navigationbar />
                 {
                     screenState === 'Home' &&
-                    <Content />
+                    <Home />
+                }
+                {
+                    screenState === 'Map' &&
+                    <React.Fragment>
+                        <Typography variant="h3" gutterBottom>
+                            マップ
+                        </Typography>
+                        <Typography variant="h5" gutterBottom>
+                            近日実装！
+                        </Typography>
+                    </React.Fragment>
+                }
+                {
+                    screenState === 'Favorite' &&
+                    <React.Fragment>
+                        <Typography variant="h3" gutterBottom>
+                            お気に入り
+                        </Typography>
+                        <Typography variant="h5" gutterBottom>
+                            近日実装！
+                        </Typography>
+                    </React.Fragment>
                 }
                 <MyBottomNavigation switchScreen={this.switchScreen}/>
             </React.Fragment>
