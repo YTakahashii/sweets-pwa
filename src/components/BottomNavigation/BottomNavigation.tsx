@@ -5,6 +5,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import CakeIcon from '@material-ui/icons/Cake';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { ScreenState } from '../NavigationController/NavigationControllerState';
 
 const styles = () => createStyles({
     root: {
@@ -17,18 +18,22 @@ const styles = () => createStyles({
     }
 });
 
-type MyBottomNavigationProps = WithStyles<typeof styles>;
+type MyBottomNavigationProps = {switchScreen: (screenState: ScreenState) => void} & WithStyles<typeof styles>;
 interface MyBottomNavigationState {
-    value: number;
+    value: ScreenState;
 }
 
 class MyBottomNavigation extends React.Component<MyBottomNavigationProps, MyBottomNavigationState>  {
-    state = {
-        value: 0,
-    };
+    constructor(props: MyBottomNavigationProps) {
+        super(props);
+        this.state = {
+            value: 'Home',
+        };
+    }
 
-    handleChange = (event: React.ChangeEvent, value: number) => {
+    handleChange = (event: React.ChangeEvent, value: ScreenState) => {
         this.setState({ value });
+        this.props.switchScreen(value);
         // console.log(event.currentTarget.textContent); // labelの値
     };
 
@@ -43,9 +48,9 @@ class MyBottomNavigation extends React.Component<MyBottomNavigationProps, MyBott
                 showLabels
                 className={classes.root}
             >
-                <BottomNavigationAction label="スイーツ" icon={<CakeIcon />} />
-                <BottomNavigationAction label="地図" icon={<LocationOnIcon />} />
-                <BottomNavigationAction label="お気に入り" icon={<FavoriteIcon />} />
+                <BottomNavigationAction label="スイーツ" icon={<CakeIcon />} value='Home' />
+                <BottomNavigationAction label="地図" icon={<LocationOnIcon />} value='Map'/>
+                <BottomNavigationAction label="お気に入り" icon={<FavoriteIcon />} value='Favorite'/>
             </BottomNavigation>
         );
     }
