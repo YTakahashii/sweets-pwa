@@ -3,6 +3,7 @@ import * as request from 'superagent';
 import { withStyles, WithStyles, createStyles, Theme } from '@material-ui/core/styles';
 import HomeState from './HomeState';
 import SweetsCard from '../SweetsCard/SweetsCard';
+import sweetsSampleResponse from 'src/demo/sweets';
 
 const styles = (theme: Theme) => createStyles({
     root: {
@@ -26,7 +27,7 @@ class Home extends React.Component<HomeProps, HomeState> {
 
     componentWillMount() {
         request
-            .get('http://35.229.235.150/sweets')
+            .get('https://35.229.235.150/sweets')
             .then(response => {
                 this.setState({
                     sweets: response.body
@@ -37,6 +38,12 @@ class Home extends React.Component<HomeProps, HomeState> {
                     isLoaded: true
                 });
                 console.log(JSON.stringify(this.state));
+            })
+            .catch(() => {
+                this.setState({
+                    sweets: sweetsSampleResponse,
+                    isLoaded: true
+                });
             });
     }
 
