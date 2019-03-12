@@ -3,6 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
   overflow: hidden;
-
+  position: fixed;
   -webkit-user-select: none;
 }

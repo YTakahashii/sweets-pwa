@@ -13,13 +13,13 @@ ReactDOM.render(
 window.addEventListener('touchmove', event => {
   event.preventDefault();
 }, true);
-*/
-// document.ontouchmove = e => e.preventDefault();
-/*
-var textarea = document.getElementById('textarea');
+
+document.ontouchmove = e => e.preventDefault();
+
+const textarea = document.getElementById('contents') as HTMLDivElement;
 textarea.scrollTop = 1;
 
-window.addEventListener('touchmove', function(event) {
+window.addEventListener('touchmove', event => {
   if (event.target === textarea && textarea.scrollTop !== 0 && textarea.scrollTop + textarea.clientHeight !== textarea.scrollHeight) {
     event.stopPropagation();
   }
@@ -28,7 +28,7 @@ window.addEventListener('touchmove', function(event) {
   }
 });
 
-textarea.addEventListener('scroll', function(event) {
+textarea.addEventListener('scroll', event => {
   if (textarea.scrollTop === 0) {
     textarea.scrollTop = 1;
   }
