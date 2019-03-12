@@ -21,6 +21,8 @@
     "@types/node": "^11.11.0",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
+    "@types/superagent": "^4.1.0",
+    "superagent": "^4.1.0",
     "typescript": "^3.3.3333"
   }
 }
