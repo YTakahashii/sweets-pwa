@@ -27,7 +27,11 @@ class Home extends React.Component<HomeProps, HomeState> {
 
     componentWillMount() {
         request
-            .get('https://35.229.235.150/sweets')
+            .get('http://35.229.235.150/sweets')
+            .timeout({
+                response: 5000,
+                deadline: 60000
+            })
             .then(response => {
                 this.setState({
                     sweets: response.body
