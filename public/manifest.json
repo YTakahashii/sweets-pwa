@@ -3,8 +3,8 @@
   "name": "これでリジェクトされない！",
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "750x750",
+      "src": "amahako_icon1024.png",
+      "sizes": "1024x1024",
       "type": "image/png"
     }
   ],
