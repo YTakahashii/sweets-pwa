@@ -15,11 +15,10 @@ type ContentProps = WithStyles<typeof styles>;
 
 const Content = (props: ContentProps) => {
     const { classes } = props;
+    const numbers = Array.from(new Array(600)).map((v, i) => <p key={i}>{i}</p>);
     return (
         <div className={classes.root} id='contents'>
-            {
-                Array.from(new Array(600)).map((v, i) => <p key={i}>{i}</p>)
-            }
+            { numbers }
         </div>
     );
 }
