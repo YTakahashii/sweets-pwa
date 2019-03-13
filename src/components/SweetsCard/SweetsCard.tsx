@@ -2,20 +2,24 @@ import * as React from 'react';
 import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ISweet from 'src/models/Sweet';
 
 const styles = createStyles({
   card: {
-    width: '100vw'
+    marginTop: '5%',
+    marginLeft: '3%',
+    marginRight: '3%',
   },
   media: {
-    height: 140,
+    height: 220,
   },
+  actionArea: {
+    display: 'flex',
+    justifyContent: 'flex-end'
+  }
 });
 
 interface SweetCardCardOwnProps {
@@ -31,25 +35,17 @@ const SweetCard = (props: SweetCardCardProps) => {
         <CardMedia
           className={classes.media}
           image={sweet.imagePath}
-          title="Contemplative Reptile"
+          title={sweet.name}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {`${sweet.name} ${sweet.price}`}
+          <Typography gutterBottom variant="h6" component="h3">
+            {`${sweet.name}`}
           </Typography>
-          <Typography component="p">
-            {sweet.description}
+          <Typography gutterBottom variant="subtitle1" component="h4">
+            {`店舗名`}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   );
 }
