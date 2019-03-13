@@ -29,7 +29,7 @@ class Home extends React.Component<HomeProps, HomeState> {
         request
             .get('http://35.229.235.150/sweets')
             .timeout({
-                response: 5000,
+                response: 2000,
                 deadline: 60000
             })
             .then(response => {
@@ -63,7 +63,7 @@ class Home extends React.Component<HomeProps, HomeState> {
                     }
                 </div>
                 :
-                <p>ロード中</p>
+                <p className={classes.root} style={{textAlign: 'center'}}>ロード中</p>
         );
     }
 }
