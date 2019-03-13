@@ -35,7 +35,7 @@ const Navigationbar = (props: NavigationbarProps) => {
                 <IconButton color="primary">
                     <InfoIcon />
                 </IconButton>
-                <img src={logo} alt='logo' width='30%' />
+                <img src={logo} alt='logo' width='40%' />
                 <IconButton color="primary">
                     <SearchIcon />
                 </IconButton>
