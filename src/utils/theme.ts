@@ -6,4 +6,4 @@ export const theme = createMuiTheme({
       main: '#3498DB',
     },
   },
-})
+});
