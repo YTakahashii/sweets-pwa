@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { SweetsCard } from '../../components/SweetsCard/SweetsCard';
 import { SweetsCardList } from '../../components/SweetsCard/SweetsCardList';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../states';
 import { Sweets } from '../../models/Sweets';
-import sweetsSamples from '../../models/samples/Sweets';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,10 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const SweetsPage: React.FC = () => {
   const classes = useStyles();
-  const [sweets, setSweets] = useState<Sweets[]>([]);
-  useEffect(() => {
-    setSweets(sweetsSamples);
-  }, []);
+  const sweets = useSelector<RootState, Sweets[]>(state => state.sweets.lists);
 
   return (
     <div className={classes.root}>

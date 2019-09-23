@@ -1,6 +1,6 @@
 import { SmallCategory } from '../Category';
 
-export const smallCategories: SmallCategory[] = [
+const smallCategories: SmallCategory[] = [
   {
     id: 1,
     large_category_id: 1,
@@ -100,3 +100,5 @@ export const smallCategories: SmallCategory[] = [
     updated_at: '2019-07-01T06:44:21.000Z',
   },
 ];
+
+export default smallCategories;

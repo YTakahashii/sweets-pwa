@@ -1,6 +1,6 @@
 import { Shop } from '../Shop';
 
-export const shops: Shop[] = [
+const shops: Shop[] = [
   {
     id: 1,
     name: 'パティスリー　ジョリクレール',
@@ -1797,3 +1797,5 @@ export const shops: Shop[] = [
     updated_at: '2019-05-27T06:05:04.000Z',
   },
 ];
+
+export default shops;

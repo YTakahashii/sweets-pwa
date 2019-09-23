@@ -15,14 +15,17 @@ import { rootReducer } from './reducers';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
+import createSagaMiddleware from 'redux-saga';
+import { rootSaga } from './sagas';
 
 const composeEnhancers = composeWithDevTools({});
 const logger = createLogger();
-const middlewares = [logger];
+const sagaMiddleware = createSagaMiddleware();
+const middlewares = [logger, sagaMiddleware];
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [],
+  whitelist: ['sweets', 'shop', 'largeCategory', 'smallCategory'],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(
@@ -30,6 +33,8 @@ const store = createStore(
   composeEnhancers(applyMiddleware(...middlewares))
 );
 const persistor = persistStore(store);
+
+sagaMiddleware.run(rootSaga);
 
 const App: React.FC = () => {
   return (
