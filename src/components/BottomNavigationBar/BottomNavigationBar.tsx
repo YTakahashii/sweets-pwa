@@ -6,6 +6,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import useReactRouter from 'use-react-router';
 import { bottomNavigationBarHeight } from '../../utils/constants';
+import './safearea.css';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,8 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderTop: `solid 1px ${theme.palette.grey[400]}`,
       zIndex: theme.zIndex.appBar,
       backgroundColor: '#fff',
-      height: `calc(${bottomNavigationBarHeight}px + env(safe-area-inset-bottom))`,
-      paddingBottom: `env(safe-area-inset-bottom)`,
+      height: 'calc(56px + env(safe-area-inset-bottom))',
     },
     scrollHidden: {
       bottom: `-calc(${bottomNavigationBarHeight}px + env(safe-area-inset-bottom))`,
@@ -45,10 +45,10 @@ export const BottomNavigationBar: React.FC = () => {
       value={route}
       onChange={handleChange}
       showLabels
-      className={`${classes.root}`}
+      className={`${classes.root} safearea`}
     >
       <BottomNavigationAction
-        label='スイーツ'
+        label='スイーツ2'
         icon={<CakeIcon />}
         value='/sweets'
       />

@@ -6,4 +6,11 @@ export const theme = createMuiTheme({
       main: '#3498DB',
     },
   },
+  overrides: {
+    MuiBottomNavigation: {
+      root: {
+        height: 'calc(56px + env(safe-area-inset-bottom))',
+      },
+    },
+  },
 });
