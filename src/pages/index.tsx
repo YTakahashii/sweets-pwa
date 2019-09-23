@@ -1,5 +1,4 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Switch, Route, RouteProps } from 'react-router-dom';
 import { SweetsPage } from './Sweets';
 import { ShopPage } from './Shop';
@@ -39,23 +38,10 @@ const routes: RouteType[] = [
   },
 ];
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    appBarSpacer: theme.mixins.toolbar,
-  })
+export const Pages: React.FC = () => (
+  <Switch>
+    {routes.map(route => (
+      <Route key={route.key} {...route} />
+    ))}
+  </Switch>
 );
-
-export const Pages: React.FC = ({}) => {
-  const classes = useStyles();
-
-  return (
-    <>
-      <div className={classes.appBarSpacer} />
-      <Switch>
-        {routes.map(route => (
-          <Route key={route.key} {...route} />
-        ))}
-      </Switch>
-    </>
-  );
-};

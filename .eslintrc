@@ -22,6 +22,8 @@
   ],
   "rules": {
     "prettier/prettier": "error",
-    "no-empty-pattern": "off"
+    "no-empty-pattern": "off",
+    "@typescript-eslint/camelcase": "off",
+    "react/prop-types": "off"
   }
 }

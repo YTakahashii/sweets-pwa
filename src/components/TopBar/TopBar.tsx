@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { AppBar, Toolbar, IconButton, Container } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton } from '@material-ui/core';
 import InfoIcon from '@material-ui/icons/Info';
 import SearchIcon from '@material-ui/icons/Search';
 import logo from '../../assets/logo.png';
@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     logo: {
       objectFit: 'contain',
-      height: 32,
+      height: 36,
     },
   })
 );
 
-export const TopBar: React.FC = ({}) => {
+export const TopBar: React.FC = () => {
   const classes = useStyles();
 
   return (

@@ -5,6 +5,7 @@ import CakeIcon from '@material-ui/icons/Cake';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import useReactRouter from 'use-react-router';
+import { bottomNavigationBarHeight } from '../../utils/constants';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,8 +19,11 @@ const useStyles = makeStyles((theme: Theme) =>
       borderTop: `solid 1px ${theme.palette.grey[400]}`,
       zIndex: theme.zIndex.appBar,
       backgroundColor: '#fff',
-      height: `calc(56px + env(safe-area-inset-bottom))`,
-      paddingBottom: 'env(safe-area-inset-bottom)',
+      height: `calc(${bottomNavigationBarHeight}px + env(safe-area-inset-bottom))`,
+      paddingBottom: `env(safe-area-inset-bottom)`,
+    },
+    scrollHidden: {
+      bottom: `-calc(${bottomNavigationBarHeight}px + env(safe-area-inset-bottom))`,
     },
   })
 );
@@ -27,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 type MainRoutes = '/sweets' | '/maps' | '/favorites';
 
 export const BottomNavigationBar: React.FC = () => {
-  const classes = useStyles({});
+  const classes = useStyles();
   const [route, setRoute] = useState<MainRoutes>('/sweets');
   const { history } = useReactRouter();
 

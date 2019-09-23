@@ -9,6 +9,7 @@ body {
   position: fixed;
   -webkit-user-select: none;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
 code {

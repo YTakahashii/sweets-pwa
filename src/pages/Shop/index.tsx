@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const ShopPage: React.FC = ({}) => <div>ショップページ</div>;
+export const ShopPage: React.FC = () => <div>ショップページ</div>;
