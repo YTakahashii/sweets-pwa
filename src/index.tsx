@@ -1,40 +1,12 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
-/*
-window.addEventListener('touchmove', event => {
-  event.preventDefault();
-}, true);
-
-document.ontouchmove = e => e.preventDefault();
-
-const textarea = document.getElementById('contents') as HTMLDivElement;
-textarea.scrollTop = 1;
-
-window.addEventListener('touchmove', event => {
-  if (event.target === textarea && textarea.scrollTop !== 0 && textarea.scrollTop + textarea.clientHeight !== textarea.scrollHeight) {
-    event.stopPropagation();
-  }
-  else {
-    event.preventDefault();
-  }
-});
-
-textarea.addEventListener('scroll', event => {
-  if (textarea.scrollTop === 0) {
-    textarea.scrollTop = 1;
-  }
-  else if (textarea.scrollTop + textarea.clientHeight === textarea.scrollHeight) {
-    textarea.scrollTop = textarea.scrollTop - 1;
-  }
-});
-*/
-registerServiceWorker();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.register();
