@@ -14,15 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
     card: {
       position: 'relative',
       borderRadius: 15,
-      maxWidth: 400,
-      [theme.breakpoints.down('md')]: {
-        margin: `${theme.spacing(1)}px auto`,
-        width: '100%',
-      },
-      [theme.breakpoints.up('md')]: {
-        margin: `${theme.spacing(1)}px`,
-        width: '50%',
-      },
     },
     media: {
       height: 300,

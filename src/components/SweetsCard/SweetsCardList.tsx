@@ -3,19 +3,12 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   bottomNavigationBarHeight,
   envSafeAreaInsetBottom,
-  constantSafeAreaInsetBottom,
 } from '../../utils/constants';
 import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      position: 'relative',
-      width: '100%',
       height: `100vh`,
       overflowY: 'scroll',
       paddingBottom: `calc(${bottomNavigationBarHeight +
@@ -27,9 +20,28 @@ const useStyles = makeStyles((theme: Theme) =>
         paddingTop: theme.spacing(6),
       },
     },
-    test: {
-      paddingBottom: `calc(${bottomNavigationBarHeight +
-        theme.spacing(2)}px + ${constantSafeAreaInsetBottom} * 2.5)`,
+    list: {
+      maxWidth: 756,
+      margin: '0 auto',
+      paddingInlineStart: 0,
+      listStyle: 'none',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      [theme.breakpoints.up('md')]: {
+        justifyContent: 'flex-start',
+      },
+    },
+    item: {
+      padding: 8,
+      maxWidth: 400,
+      width: '100%',
+      margin: '0 auto',
+      [theme.breakpoints.up('md')]: {
+        width: '50%',
+        margin: 0,
+      },
     },
   })
 );
@@ -38,8 +50,14 @@ export const SweetsCardList: React.FC = ({ children }) => {
   const classes = useStyles();
 
   return (
-    <Container className={`${classes.root} ${classes.test}`} maxWidth='md'>
-      {React.Children.map(children, child => child)}
-    </Container>
+    <div className={`${classes.root}`}>
+      <Container maxWidth='md'>
+        <ul className={classes.list}>
+          {React.Children.map(children, child => (
+            <li className={classes.item}>{child}</li>
+          ))}
+        </ul>
+      </Container>
+    </div>
   );
 };
