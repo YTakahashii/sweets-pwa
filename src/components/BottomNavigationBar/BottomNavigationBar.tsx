@@ -1,37 +1,36 @@
 import React, { useState } from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import {
+  BottomNavigation as MaterialBottomNavigation,
+  BottomNavigationAction,
+} from '@material-ui/core';
 import CakeIcon from '@material-ui/icons/Cake';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import useReactRouter from 'use-react-router';
 import { bottomNavigationBarHeight } from '../../utils/constants';
-import './safearea.css';
+import styled from 'styled-components';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      position: 'fixed',
-      bottom: 0,
-      left: 0,
-      display: 'flex',
-      justifyContent: 'space-around',
-      width: '100%',
-      borderTop: `solid 1px ${theme.palette.grey[400]}`,
-      zIndex: theme.zIndex.appBar,
-      backgroundColor: '#fff',
-      height: 'calc(56px + env(safe-area-inset-bottom))',
-    },
-    scrollHidden: {
-      bottom: `-calc(${bottomNavigationBarHeight}px + env(safe-area-inset-bottom))`,
-    },
-  })
-);
+const BottomNavigation = styled(MaterialBottomNavigation)`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: calc(${bottomNavigationBarHeight} + env(safe-area-inset-bottom));
+  height: calc(
+    ${bottomNavigationBarHeight} + constants(safe-area-inset-bottom)
+  );
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: constants(safe-area-inset-bottom);
+  border-top: solid 1px ${({ theme }) => theme.palette.grey[400]};
+  z-index: ${({ theme }) => theme.zIndex.appBar};
+  background-color: ${({ theme }) => theme.palette.common.white};
+`;
 
 type MainRoutes = '/sweets' | '/maps' | '/favorites';
 
 export const BottomNavigationBar: React.FC = () => {
-  const classes = useStyles();
   const [route, setRoute] = useState<MainRoutes>('/sweets');
   const { history } = useReactRouter();
 
@@ -41,14 +40,9 @@ export const BottomNavigationBar: React.FC = () => {
   };
 
   return (
-    <BottomNavigation
-      value={route}
-      onChange={handleChange}
-      showLabels
-      className={`${classes.root} safearea`}
-    >
+    <BottomNavigation value={route} onChange={handleChange} showLabels>
       <BottomNavigationAction
-        label='スイーツ2'
+        label='スイーツ'
         icon={<CakeIcon />}
         value='/sweets'
       />

@@ -1,6 +1,4 @@
 import React from 'react';
-import './App.css';
-import { MuiThemeProvider } from '@material-ui/core/styles';
 import { theme } from './utils/theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { TopBar } from './components/TopBar/TopBar';
@@ -17,6 +15,11 @@ import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './sagas';
+import {
+  ThemeProvider as MaterialThemeProvider,
+  StylesProvider,
+} from '@material-ui/styles';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 const composeEnhancers = composeWithDevTools({});
 const logger = createLogger();
@@ -40,14 +43,20 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline />
-          <BrowserRouter>
-            <TopBar />
-            <Pages />
-            <BottomNavigationBar />
-          </BrowserRouter>
-        </MuiThemeProvider>
+        <StylesProvider injectFirst>
+          <MaterialThemeProvider theme={theme}>
+            <StyledThemeProvider theme={theme}>
+              <>
+                <CssBaseline />
+                <BrowserRouter>
+                  <TopBar />
+                  <Pages />
+                  <BottomNavigationBar />
+                </BrowserRouter>
+              </>
+            </StyledThemeProvider>
+          </MaterialThemeProvider>
+        </StylesProvider>
       </PersistGate>
     </Provider>
   );
