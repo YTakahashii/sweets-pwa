@@ -8,6 +8,7 @@ import {
   Theme,
 } from '@material-ui/core';
 import { Sweets } from '../../models/Sweets';
+import { Shop } from '../../models/Shop';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -41,9 +42,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type Props = {
   sweets: Sweets;
+  shop: Shop;
 };
 
-export const SweetsCard: React.FC<Props> = ({ sweets }) => {
+export const SweetsCard: React.FC<Props> = ({ sweets, shop }) => {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
@@ -67,7 +69,7 @@ export const SweetsCard: React.FC<Props> = ({ sweets }) => {
           variant='subtitle2'
           className={classes.shopName}
         >
-          店舗名
+          {shop.name}
         </Typography>
       </div>
     </Card>

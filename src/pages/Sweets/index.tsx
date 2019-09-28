@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { SweetsCard } from '../../components/SweetsCard/SweetsCard';
 import { SweetsCardList } from '../../components/SweetsCard/SweetsCardList';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../states';
 import { Sweets } from '../../models/Sweets';
+import { Shop } from '../../models/Shop';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,12 +19,17 @@ const useStyles = makeStyles((theme: Theme) =>
 export const SweetsPage: React.FC = () => {
   const classes = useStyles();
   const sweets = useSelector<RootState, Sweets[]>(state => state.sweets.lists);
+  const shops = useSelector<RootState, Shop[]>(state => state.shop.lists);
 
   return (
     <div className={classes.root}>
       <SweetsCardList>
-        {sweets.map((s, i) => (
-          <SweetsCard key={i} sweets={s} />
+        {sweets.map((sw, i) => (
+          <SweetsCard
+            key={i}
+            sweets={sw}
+            shop={shops.find(shop => shop.id === sw.shop_id) as Shop}
+          />
         ))}
       </SweetsCardList>
     </div>
