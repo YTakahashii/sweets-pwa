@@ -47,7 +47,7 @@ export const BottomNavigationBar: React.FC = () => {
         value='/sweets'
       />
       <BottomNavigationAction
-        label='地図 T1'
+        label='地図 T2'
         icon={<LocationOnIcon />}
         value='/maps'
       />

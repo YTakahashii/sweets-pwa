@@ -9,6 +9,8 @@ ReactDOM.render(<App />, document.getElementById('root'));
 function onUpdateHandler(registration: ServiceWorkerRegistration) {
   // Make sure that any new version of a service worker will take over the page
   // and become activated immediately.
+
+  registration.update();
   window.location.reload();
 }
 
