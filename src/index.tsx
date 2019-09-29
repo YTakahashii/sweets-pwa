@@ -7,9 +7,15 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(<App />, document.getElementById('root'));
 
 function onUpdateHandler(registration: ServiceWorkerRegistration) {
-  // Make sure that any new version of a service worker will take over the page
-  // and become activated immediately.
-
+  caches.keys().then(keys => {
+    console.log('keys: ' + keys);
+    return Promise.all(
+      keys.map(key => {
+        console.log('不要なキャッシュを削除');
+        return caches.delete(key);
+      })
+    );
+  });
   registration.update();
   window.location.reload();
 }
