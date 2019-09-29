@@ -42,12 +42,12 @@ export const BottomNavigationBar: React.FC = () => {
   return (
     <BottomNavigation value={route} onChange={handleChange} showLabels>
       <BottomNavigationAction
-        label='スイーツ3'
+        label='スイーツ'
         icon={<CakeIcon />}
         value='/sweets'
       />
       <BottomNavigationAction
-        label='地図'
+        label='地図 T1'
         icon={<LocationOnIcon />}
         value='/maps'
       />
