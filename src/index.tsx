@@ -17,7 +17,7 @@ function onUpdateHandler(registration: ServiceWorkerRegistration) {
     );
   });
   registration.update();
-  window.location.reload();
+  window.location.reload(true);
 }
 
 serviceWorker.register({ onUpdate: onUpdateHandler });
