@@ -1,77 +1,65 @@
 import React from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 import {
-  Card,
+  Card as MaterialCard,
   CardActionArea,
-  CardMedia,
-  Typography,
-  Theme,
+  CardMedia as MaterialCardMedia,
+  Typography as MaterialTypography,
 } from '@material-ui/core';
 import { Sweets } from '../../models/Sweets';
 import { Shop } from '../../models/Shop';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    card: {
-      position: 'relative',
-      borderRadius: 15,
-    },
-    media: {
-      height: 300,
-    },
-    textContainer: {
-      position: 'absolute',
-      height: theme.spacing(8),
-      background: `linear-gradient(to top, rgba(97, 97, 97, 0.5), rgba(245, 245, 245, 0.5))`,
-      width: '100%',
-      bottom: 0,
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    sweetsName: {
-      color: '#fff',
-      fontWeight: 'bold',
-      padding: `${theme.spacing(1)}px ${theme.spacing(1)}px 0px`,
-    },
-    shopName: {
-      color: '#fff',
-      padding: `${theme.spacing(0)}px ${theme.spacing(1)}px`,
-    },
-  })
-);
+const Card = styled(MaterialCard)`
+  position: relative;
+  border-radius: 15px;
+`;
+
+const CardMedia = styled(MaterialCardMedia)`
+  height: 300px;
+`;
+
+const TextContainer = styled.div`
+  position: absolute;
+  height: ${({ theme }) => theme.spacing(8)}px;
+  background: linear-gradient(
+    to top,
+    rgba(97, 97, 97, 0.5),
+    rgba(245, 245, 245, 0.5)
+  );
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+`;
+
+const SweetsName = styled(MaterialTypography)`
+  color: ${({ theme }) => theme.palette.common.white};
+  font-weight: bold;
+  padding: ${({ theme }) => `${theme.spacing(1)}px ${theme.spacing(1)}px 0px`};
+`;
+
+const ShopName = styled(MaterialTypography)`
+  color: ${({ theme }) => theme.palette.common.white};
+  padding: ${({ theme }) => `${theme.spacing(0)}px ${theme.spacing(1)}px`};
+`;
 
 type Props = {
   sweets: Sweets;
   shop: Shop;
 };
 
-export const SweetsCard: React.FC<Props> = ({ sweets, shop }) => {
-  const classes = useStyles();
-  return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={sweets.imagePath}
-          title={sweets.name}
-        />
-      </CardActionArea>
-      <div className={classes.textContainer}>
-        <Typography
-          component='h2'
-          variant='subtitle1'
-          className={classes.sweetsName}
-        >
-          {sweets.name}
-        </Typography>
-        <Typography
-          component='p'
-          variant='subtitle2'
-          className={classes.shopName}
-        >
-          {shop.name}
-        </Typography>
-      </div>
-    </Card>
-  );
-};
+export const SweetsCard: React.FC<Props> = ({ sweets, shop }) => (
+  <Card>
+    <CardActionArea>
+      <CardMedia image={sweets.imagePath} title={sweets.name} />
+    </CardActionArea>
+    <TextContainer>
+      <SweetsName component='h2' variant='subtitle1'>
+        {sweets.name}
+      </SweetsName>
+      <ShopName component='p' variant='subtitle2'>
+        {shop.name}
+      </ShopName>
+    </TextContainer>
+  </Card>
+);
