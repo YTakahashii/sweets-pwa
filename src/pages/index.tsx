@@ -4,6 +4,7 @@ import { SweetsPage } from './Sweets';
 import { ShopPage } from './Shop';
 import { MapPage } from './Map';
 import { FavoritesPage } from './Favorites';
+import { SweetsDetailPage } from './SweetsDetail';
 
 type RouteKey = {
   key: string;
@@ -15,7 +16,13 @@ const routes: RouteType[] = [
   {
     component: SweetsPage,
     key: 'sweets',
-    path: ['/', '/sweets', '/sweets/:id'],
+    path: ['/', '/sweets'],
+    exact: true,
+  },
+  {
+    component: SweetsDetailPage,
+    key: 'sweets#detail',
+    path: ['/sweets/:id'],
     exact: true,
   },
   {

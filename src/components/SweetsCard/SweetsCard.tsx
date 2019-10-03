@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import { Sweets } from '../../models/Sweets';
 import { Shop } from '../../models/Shop';
+import useReactRouter from 'use-react-router';
 
 const Card = styled(MaterialCard)`
   position: relative;
@@ -48,18 +49,23 @@ type Props = {
   shop: Shop;
 };
 
-export const SweetsCard: React.FC<Props> = ({ sweets, shop }) => (
-  <Card>
-    <CardActionArea>
-      <CardMedia image={sweets.imagePath} title={sweets.name} />
-    </CardActionArea>
-    <TextContainer>
-      <SweetsName component='h2' variant='subtitle1'>
-        {sweets.name}
-      </SweetsName>
-      <ShopName component='p' variant='subtitle2'>
-        {shop.name}
-      </ShopName>
-    </TextContainer>
-  </Card>
-);
+export const SweetsCard: React.FC<Props> = ({ sweets, shop }) => {
+  const { history } = useReactRouter();
+  const handleClick = () => history.push(`/sweets/${sweets.id}`);
+
+  return (
+    <Card>
+      <CardActionArea onClick={handleClick}>
+        <CardMedia image={sweets.imagePath} title={sweets.name} />
+      </CardActionArea>
+      <TextContainer>
+        <SweetsName component='h2' variant='subtitle1'>
+          {sweets.name}
+        </SweetsName>
+        <ShopName component='p' variant='subtitle2'>
+          {shop.name}
+        </ShopName>
+      </TextContainer>
+    </Card>
+  );
+};
