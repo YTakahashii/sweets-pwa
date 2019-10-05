@@ -5,7 +5,9 @@ import sample from '../models/samples/SmallCategories';
 
 export const initialState: SmallCategoryState = {
   lists: [],
-  edits: {},
+  edits: {
+    aggregatedSweetsBySmCategory: {},
+  },
 };
 
 export const smallCategoryReducer = (
@@ -17,6 +19,14 @@ export const smallCategoryReducer = (
       return {
         ...state,
         lists: sample,
+      };
+    case ActionType.AGGREGATE_SWEETS_BY_SMALL_CATEGORY_SUCCESS:
+      return {
+        ...state,
+        edits: {
+          ...state.edits,
+          aggregatedSweetsBySmCategory: action.payload,
+        },
       };
     default:
       return state;

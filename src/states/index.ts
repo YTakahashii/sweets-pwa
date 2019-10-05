@@ -23,5 +23,11 @@ export type LargeCategoryState = {
 
 export type SmallCategoryState = {
   lists: SmallCategory[];
-  edits: {};
+  edits: {
+    aggregatedSweetsBySmCategory: AggregatedSweetsBySmallCategory;
+  };
+};
+
+export type AggregatedSweetsBySmallCategory = {
+  [smallCategoryId: string]: number[];
 };
