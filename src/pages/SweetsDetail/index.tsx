@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import useReactRouter from 'use-react-router';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
@@ -104,19 +104,21 @@ const RecommendContainer = styled.div`
 
 const RecommendSweetsContainer = styled.div`
   display: grid;
-  grid-template-rows: 100px;
-  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   align-content: center;
   justify-content: center;
   padding-top: 8px;
-  grid-row-gap: 8px;
-  grid-column-gap: 8px;
+  grid-gap: 8px;
 `;
 
 const RecommendSweetsImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+  max-width: 100px;
   border-radius: 16px;
+  border: 1px solid ${({ theme }) => theme.palette.grey[400]};
 `;
 
 type RouteParams = {
@@ -124,6 +126,7 @@ type RouteParams = {
 };
 
 export const SweetsDetailPage: React.FC = () => {
+  const ref = useRef<HTMLDivElement>();
   const { match, history } = useReactRouter<RouteParams>();
   const id = parseInt(match.params.id, 10);
   const sweets = useSelector<RootState, Sweets[]>(state => state.sweets.lists);
@@ -137,6 +140,9 @@ export const SweetsDetailPage: React.FC = () => {
   const recommendedSweetsIds = mainSweets!.small_category_ids.flatMap(id => aggregatedSweetsByCategory[id]);
   const sweetsById = (id: number) => sweets.find(s => s.id === id);
   const handleRcommendedImageClick = (id: number) => () => history.push(`/sweets/${id}`);
+
+  useEffect(() => {}, [match.params.id]);
+
   return (
     <Wrapper>
       <Spacer />
@@ -167,11 +173,13 @@ export const SweetsDetailPage: React.FC = () => {
               </IconTextContainer>
               <RecommendSweetsContainer>
                 {recommendedSweetsIds.map(id => (
-                  <RecommendSweetsImage
-                    key={id}
-                    src={sweetsById(id)!.imagePath}
-                    onClick={handleRcommendedImageClick(id)}
-                  />
+                  <div key={id}>
+                    <RecommendSweetsImage
+                      key={id}
+                      src={sweetsById(id)!.imagePath}
+                      onClick={handleRcommendedImageClick(id)}
+                    />
+                  </div>
                 ))}
               </RecommendSweetsContainer>
             </RecommendContainer>
