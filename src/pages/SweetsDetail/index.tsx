@@ -1,14 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import useReactRouter from 'use-react-router';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { RootState, AggregatedSweetsBySmallCategory } from '../../states';
-import { Sweets } from '../../models/Sweets';
-import { Shop } from '../../models/Shop';
+import { RootState } from '../../states';
+import { Shop } from '../../infrastructures/models/Shop';
 import { bottomNavigationBarHeight } from '../../utils/constants';
 import { Typography } from '@material-ui/core';
 import MaterialStoreIcon from '@material-ui/icons/StorefrontRounded';
 import MaterialThumbUpIcon from '@material-ui/icons/ThumbUpAltRounded';
+import { EntitySweetsItem } from '../../states/Entities';
+import { AggregatedSweetsBySmallCategory } from '../../states/SmallCategoryState';
 
 const Wrapper = styled.div`
   padding: ${({ theme }) => theme.spacing(2)}px 0px;
@@ -126,22 +127,17 @@ type RouteParams = {
 };
 
 export const SweetsDetailPage: React.FC = () => {
-  const ref = useRef<HTMLDivElement>();
   const { match, history } = useReactRouter<RouteParams>();
   const id = parseInt(match.params.id, 10);
-  const sweets = useSelector<RootState, Sweets[]>(state => state.sweets.lists);
-  const mainSweets = sweets.find(s => s.id === id);
-  const shop = useSelector<RootState, Shop | undefined>(state =>
-    state.shop.lists.find(s => s.id === mainSweets!.shop_id)
-  );
+  const sweets = useSelector<RootState, EntitySweetsItem>(state => state.entities.sweets);
+  const mainSweets = sweets[id];
+  const shop = useSelector<RootState, Shop>(state => state.entities.shop[mainSweets.shop_id]);
   const aggregatedSweetsByCategory = useSelector<RootState, AggregatedSweetsBySmallCategory>(
-    state => state.smallCategory.edits.aggregatedSweetsBySmCategory
+    state => state.smallCategory.aggregatedSweetsId
   );
-  const recommendedSweetsIds = mainSweets!.small_category_ids.flatMap(id => aggregatedSweetsByCategory[id]);
-  const sweetsById = (id: number) => sweets.find(s => s.id === id);
+  const recommendedSweetsIds = mainSweets.small_category_ids.flatMap(id => aggregatedSweetsByCategory[id]);
+  console.log(recommendedSweetsIds);
   const handleRcommendedImageClick = (id: number) => () => history.push(`/sweets/${id}`);
-
-  useEffect(() => {}, [match.params.id]);
 
   return (
     <Wrapper>
@@ -175,8 +171,7 @@ export const SweetsDetailPage: React.FC = () => {
                 {recommendedSweetsIds.map(id => (
                   <div key={id}>
                     <RecommendSweetsImage
-                      key={id}
-                      src={sweetsById(id)!.imagePath}
+                      src={sweets[id] && sweets[id].imagePath && sweets[id].imagePath}
                       onClick={handleRcommendedImageClick(id)}
                     />
                   </div>

@@ -1,11 +1,10 @@
 import ActionType from './ActionType';
-import { createStandardAction, createAsyncAction } from 'typesafe-actions';
-import { AggregatedSweetsBySmallCategory } from '../../states';
+import { createStandardAction } from 'typesafe-actions';
+import { EntitySweetsItem, EntitySmallCategory } from '../../states/Entities';
 
 export const loadSmallCategories = createStandardAction(ActionType.LOAD_SMALL_CATEFORIES)();
 
-export const aggregateSweetsBySmallCategory = createAsyncAction(
-  ActionType.AGGREGATE_SWEETS_BY_SMALL_CATEGORY_REQUEST,
-  ActionType.AGGREGATE_SWEETS_BY_SMALL_CATEGORY_SUCCESS,
-  ActionType.AGGREGATE_SWEETS_BY_SMALL_CATEGORY_FAILURE
-)<undefined, AggregatedSweetsBySmallCategory, undefined>();
+export const aggregateSweetsBySmallCategory = createStandardAction(ActionType.AGGREGATE_SWEETS_BY_SMALL_CATEGORY)<{
+  sweetsItem: EntitySweetsItem;
+  smallCategory: EntitySmallCategory;
+}>();

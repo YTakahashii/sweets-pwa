@@ -6,8 +6,8 @@ import {
   CardMedia as MaterialCardMedia,
   Typography as MaterialTypography,
 } from '@material-ui/core';
-import { Sweets } from '../../models/Sweets';
-import { Shop } from '../../models/Shop';
+import { SweetsItem } from '../../infrastructures/models/Sweets';
+import { Shop } from '../../infrastructures/models/Shop';
 import useReactRouter from 'use-react-router';
 
 const Card = styled(MaterialCard)`
@@ -22,11 +22,7 @@ const CardMedia = styled(MaterialCardMedia)`
 const TextContainer = styled.div`
   position: absolute;
   height: ${({ theme }) => theme.spacing(8)}px;
-  background: linear-gradient(
-    to top,
-    rgba(97, 97, 97, 0.5),
-    rgba(245, 245, 245, 0.5)
-  );
+  background: linear-gradient(to top, rgba(97, 97, 97, 0.5), rgba(245, 245, 245, 0.5));
   width: 100%;
   bottom: 0;
   display: flex;
@@ -45,7 +41,7 @@ const ShopName = styled(MaterialTypography)`
 `;
 
 type Props = {
-  sweets: Sweets;
+  sweets: SweetsItem;
   shop: Shop;
 };
 

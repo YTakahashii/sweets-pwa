@@ -1,6 +1,6 @@
 import { LargeCategory } from '../Category';
 
-const largeCategories: LargeCategory[] = [
+export const largeCategories: LargeCategory[] = [
   {
     id: 1,
     name: '和菓子',
@@ -20,5 +20,3 @@ const largeCategories: LargeCategory[] = [
     updated_at: '2019-07-01T06:44:21.000Z',
   },
 ];
-
-export default largeCategories;

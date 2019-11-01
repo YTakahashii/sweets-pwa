@@ -1,4 +1,4 @@
-export type Sweets = {
+export type SweetsItem = {
   id: number;
   shop_id: number;
   name: string;
@@ -10,8 +10,4 @@ export type Sweets = {
   created_at: string;
   updated_at: string;
   from_rdf: boolean;
-};
-
-export type GetSweetsResponse = {
-  sweets: Sweets[];
 };

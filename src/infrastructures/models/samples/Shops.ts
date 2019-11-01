@@ -1,6 +1,6 @@
 import { Shop } from '../Shop';
 
-const shops: Shop[] = [
+export const shops: Shop[] = [
   {
     id: 1,
     name: 'パティスリー　ジョリクレール',
@@ -17,8 +17,7 @@ const shops: Shop[] = [
     url: 'http://www.hokuto-jolicreer.com',
     latitude: '41.821807',
     longitude: '140.652181',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131041912.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131041912.jpg',
     telephone: '0138-73-0370',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -39,8 +38,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.771757',
     longitude: '140.726413',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130830040341.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130830040341.jpg',
     telephone: '0138-84-1998',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -61,8 +59,7 @@ const shops: Shop[] = [
     url: 'http://ameblo.jp/lapin-de-neige/',
     latitude: '41.769118',
     longitude: '140.726799',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180201041808.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180201041808.jpg',
     telephone: '0138-27-5505',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -83,8 +80,7 @@ const shops: Shop[] = [
     url: 'http://www.facebook.com/g.roule0518/',
     latitude: '41.789846',
     longitude: '140.738301',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131023018.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131023018.jpg',
     telephone: '0138-40-9311',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -105,8 +101,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.791858',
     longitude: '140.743594',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170119025224.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170119025224.jpg',
     telephone: '0138-42-2477',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -114,8 +109,7 @@ const shops: Shop[] = [
   {
     id: 6,
     name: 'はるの餅',
-    description:
-      'お餅も餡も全て手作り。大門で40年の餅職人が作る懐かしくも新しいお餅をご賞味ください。',
+    description: 'お餅も餡も全て手作り。大門で40年の餅職人が作る懐かしくも新しいお餅をご賞味ください。',
     area: '西部エリア',
     postcode: '040-0035',
     address: '函館市松風町2-5',
@@ -127,8 +121,7 @@ const shops: Shop[] = [
     url: 'http://haruno-mochi.com/',
     latitude: '41.770114',
     longitude: '140.73216',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170123040703.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170123040703.jpg',
     telephone: '0138-23-3133',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -148,8 +141,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.802889',
     longitude: '140.766379',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130831083453.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130831083453.jpg',
     telephone: '0138-53-0419',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -157,8 +149,7 @@ const shops: Shop[] = [
   {
     id: 8,
     name: 'パティスリー　アキラ',
-    description:
-      'おいしさのために鮮度と素材にこだわった、確かな技術をもつ小さなフランス菓子の店。',
+    description: 'おいしさのために鮮度と素材にこだわった、確かな技術をもつ小さなフランス菓子の店。',
     area: '中央エリア',
     postcode: '040-0012',
     address: '函館市時任町34-23',
@@ -170,8 +161,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.78249',
     longitude: '140.757263',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130830043314.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130830043314.jpg',
     telephone: '0138-51-1187',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -179,8 +169,7 @@ const shops: Shop[] = [
   {
     id: 9,
     name: '欧風菓子　ピラミッド',
-    description:
-      '急に食べたくなった時も、手ぶらで帰れないアナタも。深夜12時まで営業しています。',
+    description: '急に食べたくなった時も、手ぶらで帰れないアナタも。深夜12時まで営業しています。',
     area: '中央エリア',
     postcode: '040-0011',
     address: '函館市本町1-33　スターパレスビル1Ｆ',
@@ -192,8 +181,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.787834',
     longitude: '140.749883',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130901022559.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130901022559.jpg',
     telephone: '0138-52-2565',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -213,16 +201,14 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.819113',
     longitude: '140.641212',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161207021645.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161207021645.jpg',
     telephone: '0138-73-3152',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
   },
   {
     id: 11,
-    name:
-      'パティスリー　プティ・メルヴィーユ　金森赤レンガ倉庫ＢＡＹはこだて店',
+    name: 'パティスリー　プティ・メルヴィーユ　金森赤レンガ倉庫ＢＡＹはこだて店',
     description:
       '函館の観光名所「赤レンガ倉庫」にある店舗です。1996年9月発売以来、プティ・メルヴィーユの代表作「メルチーズ」や「かぼちゃプリン」をはじめ厳選素材を使ったスイーツをお楽しみ下さい。',
     area: '西部エリア',
@@ -236,8 +222,7 @@ const shops: Shop[] = [
     url: 'http://www.petite-merveille.jp/',
     latitude: '41.766687',
     longitude: '140.717363',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130830043816.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130830043816.jpg',
     telephone: '0138-84-5677',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -257,8 +242,7 @@ const shops: Shop[] = [
     url: 'https://www.facebook.com/gourmands.kanta',
     latitude: '41.789729',
     longitude: '140.744584',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130831083546.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130831083546.jpg',
     telephone: '0138-33-5501',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -266,8 +250,7 @@ const shops: Shop[] = [
   {
     id: 13,
     name: 'スイーツ　けやき　どら焼のお店',
-    description:
-      '北海道産の無添加素材を使った、40種類以上のオリジナルどら焼を一つ一つ手造りで製造販売。',
+    description: '北海道産の無添加素材を使った、40種類以上のオリジナルどら焼を一つ一つ手造りで製造販売。',
     area: '北部エリア',
     postcode: '041-0807',
     address: '函館市北美原２丁目24-13',
@@ -279,8 +262,7 @@ const shops: Shop[] = [
     url: 'http://sweets-keyaki.meisanichiba.jp',
     latitude: '41.830718',
     longitude: '140.747748',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130830040913.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130830040913.jpg',
     telephone: '0138-47-4561',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -301,8 +283,7 @@ const shops: Shop[] = [
     url: 'http://cicciopasticcio.jp',
     latitude: '41.825005',
     longitude: '140.741024',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130830033931.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130830033931.jpg',
     telephone: '0138-34-7020',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -322,8 +303,7 @@ const shops: Shop[] = [
     url: 'http://www.ikayokan.com',
     latitude: '41.787033',
     longitude: '140.731201',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180201050206.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180201050206.jpg',
     telephone: '0138-42-0989',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -331,8 +311,7 @@ const shops: Shop[] = [
   {
     id: 16,
     name: 'カドウフーズ　株式会社　嘉福堂',
-    description:
-      '北海道の恵まれた食材にこだわった、美味しい手づくりメニューを皆様へ',
+    description: '北海道の恵まれた食材にこだわった、美味しい手づくりメニューを皆様へ',
     area: '北部エリア',
     postcode: '040-0071',
     address: '函館市追分町1-25',
@@ -344,8 +323,7 @@ const shops: Shop[] = [
     url: 'http://kadoufoods.meisanichiba.jp/',
     latitude: '41.797921',
     longitude: '140.732523',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130831084456.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130831084456.jpg',
     telephone: '0138-62-6077',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -353,8 +331,7 @@ const shops: Shop[] = [
   {
     id: 17,
     name: '昭和製菓　株式会社',
-    description:
-      '伝統の味を引き継ぎ半世紀、北海道原料で作り上げた函館スイーツの美味しさを全国へ！',
+    description: '伝統の味を引き継ぎ半世紀、北海道原料で作り上げた函館スイーツの美味しさを全国へ！',
     area: '北部エリア',
     postcode: '041-0824',
     address: '函館市西桔梗町589-39',
@@ -366,8 +343,7 @@ const shops: Shop[] = [
     url: 'http://www.ss-showa.com',
     latitude: '41.829792',
     longitude: '140.721239',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130831083742.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130831083742.jpg',
     telephone: '0138-50-8080',
     created_at: '2019-05-27T06:05:03.000Z',
     updated_at: '2019-05-27T06:05:03.000Z',
@@ -375,8 +351,7 @@ const shops: Shop[] = [
   {
     id: 18,
     name: 'ミモザ',
-    description:
-      '大切な方へのお菓子の贈り物・家族や友達との幸せなひとときにミモザのお菓子を。',
+    description: '大切な方へのお菓子の贈り物・家族や友達との幸せなひとときにミモザのお菓子を。',
     area: '中央エリア',
     postcode: '042-0942',
     address: '函館市柏木町38-2',
@@ -388,8 +363,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.789382',
     longitude: '140.771157',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180201045231.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180201045231.jpg',
     telephone: '0138-52-6001',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -397,8 +371,7 @@ const shops: Shop[] = [
   {
     id: 19,
     name: '有限会社　銀月',
-    description:
-      '昭和41年創業の和菓子、お団子の専門店。湯の川名物といえばやっぱり「やきだんご」',
+    description: '昭和41年創業の和菓子、お団子の専門店。湯の川名物といえばやっぱり「やきだんご」',
     area: '東央エリア',
     postcode: '042-0932',
     address: '函館市湯川町2丁目22-5',
@@ -410,8 +383,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.779875',
     longitude: '140.787265',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130052237.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130052237.jpg',
     telephone: '0138-57-6504',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -432,8 +404,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.802935',
     longitude: '140.73928',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161206092623.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161206092623.jpg',
     telephone: '0138-45-0963',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -454,8 +425,7 @@ const shops: Shop[] = [
     url: 'http://o-kashi-yoshida.com/',
     latitude: '41.820114',
     longitude: '140.717078',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131042906.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131042906.jpg',
     telephone: '0138-83-6668',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -463,8 +433,7 @@ const shops: Shop[] = [
   {
     id: 22,
     name: 'スウィーツギャラリー北じま',
-    description:
-      'スウィーツギャラリー北じまは、変わらぬ味・新しい味など豊富な品揃えでお客様を楽しませます。',
+    description: 'スウィーツギャラリー北じまは、変わらぬ味・新しい味など豊富な品揃えでお客様を楽しませます。',
     area: '函館市近郊エリア',
     postcode: '049-0422',
     address: '上磯郡木古内町字本町330-4',
@@ -476,8 +445,7 @@ const shops: Shop[] = [
     url: 'http://kitajima-pan.com',
     latitude: '41.677153',
     longitude: '140.435218',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161215124158.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161215124158.jpg',
     telephone: '01392-2-2209',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -485,13 +453,11 @@ const shops: Shop[] = [
   {
     id: 23,
     name: 'ペイストリー　スナッフルス　金森洋物館店',
-    description:
-      '北海道産の安全で新鮮な材料を使い、シンプルでわかりやすく新鮮な商品を北海道から全国へ提供し続ける。',
+    description: '北海道産の安全で新鮮な材料を使い、シンプルでわかりやすく新鮮な商品を北海道から全国へ提供し続ける。',
     area: '西部エリア',
     postcode: '040-0053',
     address: '函舘市末広町13-9',
-    openingHoursSpecification:
-      '9:30～19:00※季節によって変わる場合があります。 ',
+    openingHoursSpecification: '9:30～19:00※季節によって変わる場合があります。 ',
     closed: '建物に準じます。',
     parking: '無料あり(※金森赤レンガ倉庫駐車場あり)',
     eatin: 'あり',
@@ -499,8 +465,7 @@ const shops: Shop[] = [
     url: 'http://www.snaffles.jp',
     latitude: '41.766457',
     longitude: '140.716947',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161121040459.png',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161121040459.png',
     telephone: '0138-27-1240',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -521,8 +486,7 @@ const shops: Shop[] = [
     url: 'http://www.hokuyodo.com',
     latitude: '41.428534',
     longitude: '140.10864',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161122051412.gif',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161122051412.gif',
     telephone: '0139-42-2058',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -542,8 +506,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.780576',
     longitude: '140.736895',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180213104234.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180213104234.jpg',
     telephone: '0138-45-1872',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -564,8 +527,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.79582',
     longitude: '140.780556',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131044949.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131044949.jpg',
     telephone: '0138-51-5313',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -573,8 +535,7 @@ const shops: Shop[] = [
   {
     id: 27,
     name: '函館　凮月堂',
-    description:
-      '季節に合わせた旬の素材を使った、お菓子をお客様に提供できる様、心掛けております。',
+    description: '季節に合わせた旬の素材を使った、お菓子をお客様に提供できる様、心掛けております。',
     area: '北部エリア',
     postcode: '041-0802',
     address: '函館市石川町183-1',
@@ -586,8 +547,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.838334',
     longitude: '140.740122',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131040029.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131040029.jpg',
     telephone: '0138-86-7026',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -608,8 +568,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.801629',
     longitude: '140.723074',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130050439.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130050439.jpg',
     telephone: '0138-45-5828',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -630,8 +589,7 @@ const shops: Shop[] = [
     url: 'http://www.gotoken.hakodate.jp',
     latitude: '41.763624',
     longitude: '140.715987',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161205041628.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161205041628.jpg',
     telephone: '0138-23-1106',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -639,8 +597,7 @@ const shops: Shop[] = [
   {
     id: 30,
     name: '千秋庵総本家',
-    description:
-      '創業以来152年、材料にこだわり手間と時間をかけた、ていねいな菓子作りの店',
+    description: '創業以来152年、材料にこだわり手間と時間をかけた、ていねいな菓子作りの店',
     area: '西部エリア',
     postcode: '040-0043',
     address: '函館市宝来町9-9',
@@ -652,8 +609,7 @@ const shops: Shop[] = [
     url: 'http://sensyuansohonke.co.jp',
     latitude: '41.761108',
     longitude: '140.719445',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161130115436.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161130115436.jpg',
     telephone: '0138-23-5131',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -666,8 +622,7 @@ const shops: Shop[] = [
     area: '西部エリア',
     postcode: '040-0064',
     address: '函館市大手町5-10',
-    openingHoursSpecification:
-      '7:30～20:00（パン11:00～、ケーキ10:00～無くなり次第終了） ',
+    openingHoursSpecification: '7:30～20:00（パン11:00～、ケーキ10:00～無くなり次第終了） ',
     closed: '無休',
     parking: '無料あり',
     eatin: 'なし',
@@ -675,8 +630,7 @@ const shops: Shop[] = [
     url: 'http://www.hakodate-kokusai.jp',
     latitude: '41.769556',
     longitude: '140.722275',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161216035531.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161216035531.jpg',
     telephone: '0138-23-5151',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -697,8 +651,7 @@ const shops: Shop[] = [
     url: 'http://chouette-cacao.com/',
     latitude: '41.794328',
     longitude: '140.748513',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131041502.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131041502.jpg',
     telephone: '0138-33-5766',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -718,8 +671,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.901322',
     longitude: '140.688809',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180530104717.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180530104717.jpg',
     telephone: '0138-65-7623　',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -727,8 +679,7 @@ const shops: Shop[] = [
   {
     id: 34,
     name: 'Short Berry (ショートベリー)',
-    description:
-      '安心安全な北海道のおいしい食材を中心に使用して、一つ一つ丁寧に作っています。',
+    description: '安心安全な北海道のおいしい食材を中心に使用して、一つ一つ丁寧に作っています。',
     area: '北部エリア',
     postcode: '041-0801',
     address: '函館市桔梗町418-112',
@@ -740,8 +691,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.83487',
     longitude: '140.735376',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131040850.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131040850.jpg',
     telephone: '0138-87-0500',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -749,8 +699,7 @@ const shops: Shop[] = [
   {
     id: 35,
     name: 'ホテル函館ロイヤルケーキショップ',
-    description:
-      'ハンドメイドで味わい深いケーキの数々。楽しいひとときの演出に、またお土産としてもご利用ください。',
+    description: 'ハンドメイドで味わい深いケーキの数々。楽しいひとときの演出に、またお土産としてもご利用ください。',
     area: '西部エリア',
     postcode: '040-0034',
     address: '函館市大森町16-9',
@@ -762,8 +711,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.769077',
     longitude: '140.733182',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170117045404.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170117045404.jpg',
     telephone: '0138-22-8181',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -784,8 +732,7 @@ const shops: Shop[] = [
     url: 'http://kurayakashiho.co.jp/',
     latitude: '42.251736',
     longitude: '140.277456',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130045600.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130045600.jpg',
     telephone: '0137-62-3231',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -793,8 +740,7 @@ const shops: Shop[] = [
   {
     id: 37,
     name: '五勝手屋本舗',
-    description:
-      '毎月季節の和生菓子が新しくなり、人生の節目毎にお使い頂ける和菓子を多種用意。',
+    description: '毎月季節の和生菓子が新しくなり、人生の節目毎にお使い頂ける和菓子を多種用意。',
     area: '函館市近郊エリア',
     postcode: '043-0043',
     address: '桧山郡江差町本町38',
@@ -806,8 +752,7 @@ const shops: Shop[] = [
     url: 'http://www.gokatteya.co.jp/',
     latitude: '41.864384',
     longitude: '140.125691',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130831075114.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130831075114.jpg',
     telephone: '0139-52-0022',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -828,8 +773,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.833254',
     longitude: '140.747122',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131022355.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131022355.jpg',
     telephone: '0138-46-8885',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -850,8 +794,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.783589',
     longitude: '140.732773',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180213104713.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180213104713.jpg',
     telephone: '0138-41-3006',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -859,8 +802,7 @@ const shops: Shop[] = [
   {
     id: 40,
     name: '末廣庵',
-    description:
-      '創業は1934年、ここ木古内で地域の素材などを使い木古内町に根ざした菓子を作り続ける',
+    description: '創業は1934年、ここ木古内で地域の素材などを使い木古内町に根ざした菓子を作り続ける',
     area: '函館市近郊エリア',
     postcode: '049-0422',
     address: '上磯郡木古内町本町237',
@@ -872,8 +814,7 @@ const shops: Shop[] = [
     url: 'http://koukoumoti.com/',
     latitude: '41.676417',
     longitude: '140.436115',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131043319.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131043319.jpg',
     telephone: '01392-2-2069',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -893,8 +834,7 @@ const shops: Shop[] = [
     url: 'http://patisserie-baigetsu.com/',
     latitude: '41.823292',
     longitude: '140.761356',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20130830040617.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20130830040617.jpg',
     telephone: '0138-46-7238',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -915,8 +855,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.80388',
     longitude: '140.759307',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161205050314.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161205050314.jpg',
     telephone: '0138-52-0475',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -937,8 +876,7 @@ const shops: Shop[] = [
     url: 'http://www.pechemignon.co.jp/',
     latitude: '41.779528',
     longitude: '140.761066',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161121030806.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161121030806.jpg',
     telephone: '0138-31-4301',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -959,8 +897,7 @@ const shops: Shop[] = [
     url: 'http://s.ameblo.jp/patisserie-igrek/',
     latitude: '41.825374',
     longitude: '140.673232',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161130110533.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161130110533.jpg',
     telephone: '0138-84-1365',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -968,8 +905,7 @@ const shops: Shop[] = [
   {
     id: 45,
     name: 'スイーツカフェ　カロメリア',
-    description:
-      '道産素材にこだわり、甘さ控えめに仕上げた笑顔を届けるスイーツ作りをめざしています。',
+    description: '道産素材にこだわり、甘さ控えめに仕上げた笑顔を届けるスイーツ作りをめざしています。',
     area: '中央エリア',
     postcode: '040-0005',
     address: '函館市人見町5-54',
@@ -981,8 +917,7 @@ const shops: Shop[] = [
     url: 'http://caromelia.com',
     latitude: '41.781585',
     longitude: '140.758044',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180213104011.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180213104011.jpg',
     telephone: '0138-32-5060',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1003,8 +938,7 @@ const shops: Shop[] = [
     url: 'http://hakodate-otafuku.com',
     latitude: '41.802422',
     longitude: '140.757371',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161121052832.JPG',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161121052832.JPG',
     telephone: '0138-32-2300',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1024,8 +958,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.428645',
     longitude: '140.11004',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161228105050.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161228105050.jpg',
     telephone: '0139-42-2162',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1046,8 +979,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.764887',
     longitude: '140.60436',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131024153.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131024153.jpg',
     telephone: '0138-75-2035',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1068,8 +1000,7 @@ const shops: Shop[] = [
     url: 'http://www.fujireika.com',
     latitude: '41.769746',
     longitude: '140.734937',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161220043559.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161220043559.jpg',
     telephone: '0138-22-3819',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1090,8 +1021,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.765238',
     longitude: '140.715842',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161122043036.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161122043036.jpg',
     telephone: '0138-27-4008',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1099,8 +1029,7 @@ const shops: Shop[] = [
   {
     id: 51,
     name: 'おにぎり・大福　ふくふく',
-    description:
-      'ふくふくは地場の食材にこだわり、安全・安心・おいしい商品をご提供致します。',
+    description: 'ふくふくは地場の食材にこだわり、安全・安心・おいしい商品をご提供致します。',
     area: '函館市近郊エリア',
     postcode: '049-0122',
     address: '北斗市東浜2丁目13-21',
@@ -1112,8 +1041,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.825193',
     longitude: '140.662463',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161130121255.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161130121255.jpg',
     telephone: '0138-73-2921',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1134,8 +1062,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.866142',
     longitude: '140.123394',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161130122956.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161130122956.jpg',
     telephone: '0139-52-0302',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1156,8 +1083,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.77378',
     longitude: '140.726474',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161206095858.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161206095858.jpg',
     telephone: '0138-22-0303',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1178,8 +1104,7 @@ const shops: Shop[] = [
     url: 'http://www.angeliquevoyage.com',
     latitude: '41.767904',
     longitude: '140.709118',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161206105206.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161206105206.jpg',
     telephone: '0138-76-7150',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1200,8 +1125,7 @@ const shops: Shop[] = [
     url: 'http://luckypierrot.jp/',
     latitude: '41.766865',
     longitude: '140.715998',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161206112732.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161206112732.jpg',
     telephone: '0138-27-5000',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1222,8 +1146,7 @@ const shops: Shop[] = [
     url: 'http://www.misuzucoffee.com',
     latitude: '41.772226',
     longitude: '140.730155',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180213103632.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180213103632.jpg',
     telephone: '0138-23-7676',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1244,8 +1167,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.78872',
     longitude: '140.759802',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131030355.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131030355.jpg',
     telephone: '0138-54-8977',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1266,8 +1188,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.981692',
     longitude: '140.67085',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161226115555.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161226115555.jpg',
     telephone: '0138-67-2104',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1287,8 +1208,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.917212',
     longitude: '140.224028',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131045514.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131045514.jpg',
     telephone: '0139-64-3103',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1296,8 +1216,7 @@ const shops: Shop[] = [
   {
     id: 60,
     name: 'もりまちのパンやさん　たむら',
-    description:
-      'もりまち国道5号線沿いにある工場兼店舗では、地元のお客様、遠方のお客様に好評いただいております。',
+    description: 'もりまち国道5号線沿いにある工場兼店舗では、地元のお客様、遠方のお客様に好評いただいております。',
     area: '函館市近郊エリア',
     postcode: '049-2311',
     address: '茅部郡森町字上台町326-91',
@@ -1309,8 +1228,7 @@ const shops: Shop[] = [
     url: 'https://www.facebook.com/214577812298228/',
     latitude: '42.096757',
     longitude: '140.571279',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161220040835.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161220040835.jpg',
     telephone: '01374-7-1617',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1331,8 +1249,7 @@ const shops: Shop[] = [
     url: 'http://www.amanattou.com/',
     latitude: '41.809765',
     longitude: '140.736077',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161220042306.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161220042306.jpg',
     telephone: '0138-41-0839',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1354,8 +1271,7 @@ const shops: Shop[] = [
     url: 'http://www.e-milk.co.jp',
     latitude: '41.772608',
     longitude: '140.840485',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161221104907.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161221104907.jpg',
     telephone: '0138-58-4460',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1375,8 +1291,7 @@ const shops: Shop[] = [
     url: 'http://www.kimurakashiho.com/',
     latitude: '41.896442',
     longitude: '140.691075',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161227104720.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161227104720.jpg',
     telephone: '0138-65-3571',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1396,8 +1311,7 @@ const shops: Shop[] = [
     url: 'http://www.kimurakashiho.com/',
     latitude: '41.77614',
     longitude: '140.73061',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20161227110540.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20161227110540.jpg',
     telephone: '0138-27-2221',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1418,8 +1332,7 @@ const shops: Shop[] = [
     url: 'http://kr55lemoncake.jugem.jp/',
     latitude: '41.78609',
     longitude: '140.752591',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180131023618.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180131023618.jpg',
     telephone: '0138-83-5730',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1460,8 +1373,7 @@ const shops: Shop[] = [
     url: 'http://www.facebook.com/g.roule0518/',
     latitude: '41.77378',
     longitude: '140.726474',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170104121611.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170104121611.jpg',
     telephone: '0138-84-5488',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1482,8 +1394,7 @@ const shops: Shop[] = [
     url: 'http://quatresaisons-7e.com/',
     latitude: '41.899866',
     longitude: '140.69906',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170111113204.png',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170111113204.png',
     telephone: '0138-84-8414',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1504,8 +1415,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.813808',
     longitude: '140.716929',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170106103451.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170106103451.jpg',
     telephone: '0138-43-7711',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1526,8 +1436,7 @@ const shops: Shop[] = [
     url: 'なし',
     latitude: '41.864795',
     longitude: '140.125774',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20170116035539.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20170116035539.jpg',
     telephone: '0139-52-0220',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1548,8 +1457,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.765716',
     longitude: '140.714781',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130025646.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130025646.jpg',
     telephone: '0138-26-2099',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1570,8 +1478,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.8089',
     longitude: '140.716037',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130025804.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130025804.jpg',
     telephone: '0138-42-6550',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1592,8 +1499,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.763716',
     longitude: '140.719231',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130025849.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130025849.jpg',
     telephone: '0138-23-2300',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1614,8 +1520,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.791156',
     longitude: '140.762091',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130025924.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130025924.jpg',
     telephone: '0138-32-1777',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1636,8 +1541,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.794314',
     longitude: '140.753082',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130025956.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130025956.jpg',
     telephone: '0138-55-4424',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1658,8 +1562,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.781185',
     longitude: '140.760894',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130030030.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130030030.jpg',
     telephone: '0138-53-7477',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1680,8 +1583,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.788053',
     longitude: '140.75098',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130030055.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130030055.jpg',
     telephone: '0138-56-4469',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1702,8 +1604,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.815501',
     longitude: '140.754331',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130030134.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130030134.jpg',
     telephone: '0138-46-8988',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1724,8 +1625,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.771937',
     longitude: '140.728835',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130022605.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130022605.jpg',
     telephone: '0138-26-8801',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1746,8 +1646,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.799156',
     longitude: '140.77574',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130023504.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130023504.jpg',
     telephone: '0138-53-8080',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1768,8 +1667,7 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.810109',
     longitude: '140.735933',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130024521.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130024521.jpg',
     telephone: '0138-44-6600',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
@@ -1790,12 +1688,9 @@ const shops: Shop[] = [
     url: 'http://www.lplp.jp',
     latitude: '41.784359',
     longitude: '140.807638',
-    imagePath:
-      'http://www.hakodate-sweets.com/pgm/img/main01-20180130025222.jpg',
+    imagePath: 'http://www.hakodate-sweets.com/pgm/img/main01-20180130025222.jpg',
     telephone: '0138-59-5888',
     created_at: '2019-05-27T06:05:04.000Z',
     updated_at: '2019-05-27T06:05:04.000Z',
   },
 ];
-
-export default shops;

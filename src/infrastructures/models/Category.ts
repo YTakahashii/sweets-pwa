@@ -12,11 +12,3 @@ export type SmallCategory = {
   created_at: string;
   updated_at: string;
 };
-
-export type GetLargeCategoryResponse = {
-  largeCategories: LargeCategory[];
-};
-
-export type GetSmallCategoryResponse = {
-  smallCategories: SmallCategory[];
-};
