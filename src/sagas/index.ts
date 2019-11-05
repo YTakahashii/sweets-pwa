@@ -1,6 +1,4 @@
 import { put, takeLatest, all, select } from 'redux-saga/effects';
-import { REHYDRATE } from 'redux-persist';
-
 import {
   normalizeSweetsItem,
   normalizeShop,
@@ -11,6 +9,7 @@ import { sweets, shops, largeCategories, smallCategories } from '../infrastructu
 import { aggregateSweetsBySmallCategory } from '../actions/SmallCategory/ActionCreator';
 import { getSweetsItem, getSmallCategory, getShop } from './selector';
 import { aggregateSweetsByShop } from '../actions/Shop/ActionCreator';
+import AppActionType from '../actions/App/ActionType';
 
 function* loadAllDataSaga() {
   yield put(normalizeSweetsItem({ sweetsItems: sweets }));
@@ -24,7 +23,7 @@ function* loadAllDataSaga() {
   yield put(aggregateSweetsByShop({ sweetsItem, shop }));
 }
 
-const listener = [takeLatest(REHYDRATE, loadAllDataSaga)];
+const listener = [takeLatest(AppActionType.LOAD_DATA, loadAllDataSaga)];
 
 export function* rootSaga() {
   yield all(listener);
