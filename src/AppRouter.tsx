@@ -8,6 +8,7 @@ import { SweetsDetailPage } from './components/pages/SweetsDetail/SweetsDetail';
 import { MapsPage } from './components/pages/Maps/Maps';
 import { FavoritesPage } from './components/pages/Favorites/Favorites';
 import { SearchPage } from './components/pages/Search/Search';
+import { ShopDetailPage } from './components/pages/ShopDetail/ShopDetail';
 
 export const AppRouter: React.FC = () => (
   <IonApp>
@@ -15,10 +16,11 @@ export const AppRouter: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route path='/:tab(sweets)' component={SweetsPage} exact={true} />
-          <Route path='/sweets/:id' component={SweetsDetailPage} exact={true} />
+          <Route path='/:tab(sweets)/:id' component={SweetsDetailPage} exact={true} />
           <Route path='/:tab(search)' component={SearchPage} exact={true} />
           <Route path='/:tab(maps)' component={MapsPage} exact={true} />
           <Route path='/:tab(favorites)' component={FavoritesPage} exact={true} />
+          <Route path='/shops/:id' component={ShopDetailPage} exact={true} />
           <Route path='/' render={() => <Redirect to='/sweets' />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot='bottom'>

@@ -19,5 +19,3 @@ const smallCategoriesSchema = new schema.Entity('smallCategories', undefined, { 
 export const normalizeSmallCategories = (smallCategories: SmallCategory[]): EntitySmallCategory =>
   normalize<SmallCategory[], { smallCategories: EntitySmallCategory }>(smallCategories, [smallCategoriesSchema])
     .entities.smallCategories;
-
-console.log(normalizeSweetsItem([{ id: 'id1', name: 'sweets' } as any]));
