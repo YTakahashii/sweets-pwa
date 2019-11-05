@@ -11,13 +11,14 @@ import { SearchPage } from './components/pages/Search/Search';
 import { ShopDetailPage } from './components/pages/ShopDetail/ShopDetail';
 import { useDispatch } from 'react-redux';
 import { loadData } from './actions/App/ActionCreator';
-
+import { scrollToTopSweetsListEvent } from './events/event';
 export const AppRouter: React.FC = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(loadData());
   }, []);
+
+  const handleSweetsTab = () => document.dispatchEvent(scrollToTopSweetsListEvent);
 
   return (
     <IonApp>
@@ -33,7 +34,7 @@ export const AppRouter: React.FC = () => {
             <Route path='/' render={() => <Redirect to='/sweets' />} exact={true} />
           </IonRouterOutlet>
           <IonTabBar slot='bottom'>
-            <IonTabButton tab='sweets' href='/sweets'>
+            <IonTabButton tab='sweets' href='/sweets' onClick={handleSweetsTab}>
               <IonIcon icon={home} />
               <IonLabel>スイーツ</IonLabel>
             </IonTabButton>
