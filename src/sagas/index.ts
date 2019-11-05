@@ -9,7 +9,8 @@ import {
 } from '../actions/Entities/ActionCreator';
 import { sweets, shops, largeCategories, smallCategories } from '../infrastructures/models/samples';
 import { aggregateSweetsBySmallCategory } from '../actions/SmallCategory/ActionCreator';
-import { getSweetsItem, getSmallCategory } from './selector';
+import { getSweetsItem, getSmallCategory, getShop } from './selector';
+import { aggregateSweetsByShop } from '../actions/Shop/ActionCreator';
 
 function* loadAllDataSaga() {
   yield put(normalizeSweetsItem({ sweetsItems: sweets }));
@@ -18,7 +19,9 @@ function* loadAllDataSaga() {
   yield put(normalizeSmallCategory({ smallCategories }));
   const sweetsItem = yield select(getSweetsItem);
   const smallCategory = yield select(getSmallCategory);
+  const shop = yield select(getShop);
   yield put(aggregateSweetsBySmallCategory({ sweetsItem, smallCategory }));
+  yield put(aggregateSweetsByShop({ sweetsItem, shop }));
 }
 
 const listener = [takeLatest(REHYDRATE, loadAllDataSaga)];
