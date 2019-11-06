@@ -34,7 +34,7 @@ export const AppRouter: React.FC = () => {
             <Route path='/' render={() => <Redirect to='/sweets' />} exact={true} />
           </IonRouterOutlet>
           <IonTabBar slot='bottom'>
-            <IonTabButton tab='sweets' href='/sweets' onClick={handleSweetsTab}>
+            <IonTabButton tab='sweets' href='/sweets' onClick={handleSweetsTab} defaultChecked>
               <IonIcon icon={home} />
               <IonLabel>スイーツ</IonLabel>
             </IonTabButton>
