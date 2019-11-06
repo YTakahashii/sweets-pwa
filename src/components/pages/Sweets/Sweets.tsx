@@ -19,7 +19,7 @@ export const SweetsPage: React.FC = () => {
   useLayoutEffect(() => {
     document.addEventListener(AmahakoEvent.ScrollToTopSweetsList, handleSweetsTab, false);
     return document.removeEventListener(AmahakoEvent.ScrollToTopSweetsList, handleSweetsTab, true);
-  }, [contentRef.current]);
+  });
 
   return (
     <IonPage>
