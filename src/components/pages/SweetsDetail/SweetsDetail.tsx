@@ -15,17 +15,15 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonCard,
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
 import styled from 'styled-components';
-import { getRefererPath } from '../../../utils/getRefererPath';
 
 type Props = RouteComponentProps<{ id: string }>;
 
-export const SweetsDetailPage: React.FC<Props> = ({ match }) => {
+export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
   const sweets = useSelector<RootState, RootState['entities']['sweets']>(state => state.entities.sweets);
   const selectedSweets = sweets[match.params.id];
   const shops = useSelector<RootState, RootState['entities']['shop']>(state => state.entities.shop);
@@ -33,8 +31,8 @@ export const SweetsDetailPage: React.FC<Props> = ({ match }) => {
     state => state.smallCategory.aggregatedSweetsId
   );
   const recommendedSweetsIds = selectedSweets.small_category_ids.flatMap(id => aggregatedSweetsByCategory[id]);
-  const refererPath = getRefererPath(document.referrer) || '/sweets';
   const contentRef = useRef<HTMLIonContentElement>(null);
+  const handleRecommendClick = (id: number) => () => history.push(`/sweets/${id}`);
 
   useLayoutEffect(() => {
     if (contentRef.current) {
@@ -46,8 +44,8 @@ export const SweetsDetailPage: React.FC<Props> = ({ match }) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot='start'>
-            <IonBackButton defaultHref={refererPath} text='' />
+          <IonButtons>
+            <IonBackButton defaultHref='/sweets' text='' />
           </IonButtons>
           <IonTitle>{selectedSweets.name}</IonTitle>
         </IonToolbar>

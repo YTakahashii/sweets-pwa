@@ -17,7 +17,6 @@ import {
 import { RouteComponentProps } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
-import { getRefererPath } from '../../../utils/getRefererPath';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -28,14 +27,13 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
   const aggregateSweetsByShop = useSelector<RootState, RootState['shop']['aggregatedSweetsByShop']>(
     state => state.shop.aggregatedSweetsByShop
   );
-  const refererPath = getRefererPath(document.referrer) || '/sweets';
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot='start'>
-            <IonBackButton defaultHref={refererPath} text='' />
+            <IonBackButton defaultHref='/sweets' text='' />
           </IonButtons>
           <IonTitle>{selectedShop.name}</IonTitle>
         </IonToolbar>
@@ -68,7 +66,9 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
         </IonText>
 
         <IonText>
-          <a>{selectedShop.url}</a>
+          <a href={selectedShop.url} target='_blank' rel='noopener noreferrer'>
+            {selectedShop.url}
+          </a>
         </IonText>
 
         <IonList>

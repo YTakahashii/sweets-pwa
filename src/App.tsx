@@ -11,6 +11,7 @@ import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './sagas';
 import { AppRouter } from './AppRouter';
 import { GlobalStyle } from './styles/GlobalStyle';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 

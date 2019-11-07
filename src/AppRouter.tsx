@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
+import {
+  setupConfig,
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+} from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, map, search } from 'ionicons/icons';
 import { SweetsPage } from './components/pages/Sweets/Sweets';
@@ -12,11 +21,17 @@ import { ShopDetailPage } from './components/pages/ShopDetail/ShopDetail';
 import { useDispatch } from 'react-redux';
 import { loadData } from './actions/App/ActionCreator';
 import { scrollToTopSweetsListEvent } from './events/event';
+
+setupConfig({
+  swipeBackEnabled: false,
+});
+
 export const AppRouter: React.FC = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(loadData());
-  }, []);
+  });
 
   const handleSweetsTab = () => document.dispatchEvent(scrollToTopSweetsListEvent);
 
@@ -25,11 +40,11 @@ export const AppRouter: React.FC = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route path='/:tab(sweets)' component={SweetsPage} exact={true} />
-            <Route path='/:tab(sweets)/:id' component={SweetsDetailPage} exact={true} />
-            <Route path='/:tab(search)' component={SearchPage} exact={true} />
-            <Route path='/:tab(maps)' component={MapsPage} exact={true} />
-            <Route path='/:tab(favorites)' component={FavoritesPage} exact={true} />
+            <Route path='/sweets' component={SweetsPage} exact={true} />
+            <Route path='/sweets/:id' component={SweetsDetailPage} />
+            <Route path='/search' component={SearchPage} exact={true} />
+            <Route path='/maps' component={MapsPage} exact={true} />
+            <Route path='/favorites' component={FavoritesPage} exact={true} />
             <Route path='/shops/:id' component={ShopDetailPage} exact={true} />
             <Route path='/' render={() => <Redirect to='/sweets' />} exact={true} />
           </IonRouterOutlet>
