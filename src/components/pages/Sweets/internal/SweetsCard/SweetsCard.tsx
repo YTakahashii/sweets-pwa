@@ -10,7 +10,7 @@ type Props = {
 export const SweetsCard: React.FC<Props> = ({ sweetsItem, shopName }) => {
   return (
     <IonCard button routerLink={`/sweets/${sweetsItem.id}`} routerDirection='none'>
-      <img src={sweetsItem.imagePath} />
+      <img src={sweetsItem.imagePath} alt={`${sweetsItem.name}`} />
       <IonCardHeader>
         <IonCardTitle>{sweetsItem.name}</IonCardTitle>
         <IonCardSubtitle>{shopName}</IonCardSubtitle>

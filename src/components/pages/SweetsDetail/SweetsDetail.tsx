@@ -53,7 +53,7 @@ export const SweetsDetailPage: React.FC<Props> = ({ match }) => {
         </IonToolbar>
       </IonHeader>
       <IonContent class='ion-padding' ref={contentRef}>
-        <img src={selectedSweets.imagePath} />
+        <img src={selectedSweets.imagePath} alt={selectedSweets.name} />
 
         <IonText>
           <h1>{selectedSweets.name}</h1>
@@ -80,9 +80,7 @@ export const SweetsDetailPage: React.FC<Props> = ({ match }) => {
             <IonRow>
               {recommendedSweetsIds.map(id => (
                 <IonCol key={id} size='4'>
-                  <IonCard button routerLink={`/sweets/${id}`}>
-                    <img src={sweets[id].imagePath} />
-                  </IonCard>
+                  <img src={sweets[id].imagePath} alt={sweets[id].name} onClick={handleRecommendClick(id)} />
                 </IonCol>
               ))}
             </IonRow>

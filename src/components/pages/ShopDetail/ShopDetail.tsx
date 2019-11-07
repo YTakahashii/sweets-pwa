@@ -41,7 +41,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
         </IonToolbar>
       </IonHeader>
       <IonContent class='ion-padding'>
-        <img src={selectedShop.imagePath} />
+        <img src={selectedShop.imagePath} alt={selectedShop.name} />
 
         <IonText>
           <h1>{selectedShop.name}</h1>
@@ -77,7 +77,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
             <IonRow>
               {aggregateSweetsByShop[selectedShop.id].map(sweetsId => (
                 <IonCol key={sweetsId} size='4'>
-                  <img src={sweets[sweetsId].imagePath} />
+                  <img src={sweets[sweetsId].imagePath} alt={sweets[sweetsId].name} />
                 </IonCol>
               ))}
             </IonRow>
