@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   IonPage,
   IonHeader,
@@ -9,14 +9,13 @@ import {
   IonList,
   IonListHeader,
   IonGrid,
-  IonRow,
-  IonCol,
   IonButtons,
   IonBackButton,
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
+import { SquareImageList, SquareImage } from '../../standalones/SquareImageList';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -27,6 +26,9 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
   const aggregateSweetsByShop = useSelector<RootState, RootState['shop']['aggregatedSweetsByShop']>(
     state => state.shop.aggregatedSweetsByShop
   );
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const getImgWidth = () => (imgRef.current ? imgRef.current.getBoundingClientRect().width : 'auto');
 
   return (
     <IonPage>
@@ -73,14 +75,12 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
 
         <IonList>
           <IonListHeader>取り扱い商品</IonListHeader>
-          <IonGrid>
-            <IonRow>
+          <IonGrid fixed>
+            <SquareImageList>
               {aggregateSweetsByShop[selectedShop.id].map(sweetsId => (
-                <IonCol key={sweetsId} size='4'>
-                  <img src={sweets[sweetsId].imagePath} alt={sweets[sweetsId].name} />
-                </IonCol>
+                <SquareImage key={sweetsId} src={sweets[sweetsId].imagePath} alt={sweets[sweetsId].name} />
               ))}
-            </IonRow>
+            </SquareImageList>
           </IonGrid>
         </IonList>
       </IonContent>

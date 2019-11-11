@@ -12,14 +12,12 @@ import {
   IonLabel,
   IonList,
   IonListHeader,
-  IonGrid,
-  IonRow,
-  IonCol,
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
 import styled from 'styled-components';
+import { SquareImageList, SquareImage } from '../../standalones/SquareImageList';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -74,15 +72,16 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
 
         <IonList>
           <IonListHeader>おすすめ商品</IonListHeader>
-          <IonGrid>
-            <IonRow>
-              {recommendedSweetsIds.map(id => (
-                <IonCol key={id} size='4'>
-                  <img src={sweets[id].imagePath} alt={sweets[id].name} onClick={handleRecommendClick(id)} />
-                </IonCol>
-              ))}
-            </IonRow>
-          </IonGrid>
+          <SquareImageList>
+            {recommendedSweetsIds.map(id => (
+              <SquareImage
+                key={id}
+                src={sweets[id].imagePath}
+                alt={sweets[id].name}
+                onClick={handleRecommendClick(id)}
+              />
+            ))}
+          </SquareImageList>
         </IonList>
       </IonContent>
     </IonPage>
