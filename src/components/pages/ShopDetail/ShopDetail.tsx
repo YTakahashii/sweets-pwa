@@ -4,22 +4,31 @@ import {
   IonHeader,
   IonToolbar,
   IonTitle,
-  IonContent,
   IonText,
   IonList,
   IonListHeader,
   IonGrid,
   IonButtons,
   IonBackButton,
+  IonIcon,
+  IonLabel,
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
 import { SquareImageList, SquareImage } from '../../standalones/SquareImageList';
+import {
+  IonShopDetailContent,
+  IonShopDetailItem,
+  ContentUnderImage,
+  IonSopDetaiFontawesomelIcon,
+} from './internal/elements';
+import { call, time, calendar, restaurant, link } from 'ionicons/icons';
+import { isMaterial } from '../../../utils/isMaterial';
 
 type Props = RouteComponentProps<{ id: string }>;
 
-export const ShopDetailPage: React.FC<Props> = ({ match }) => {
+export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
   const shops = useSelector<RootState, RootState['entities']['shop']>(state => state.entities.shop);
   const selectedShop = shops[match.params.id];
   const sweets = useSelector<RootState, RootState['entities']['sweets']>(state => state.entities.sweets);
@@ -29,6 +38,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   const getImgWidth = () => (imgRef.current ? imgRef.current.getBoundingClientRect().width : 'auto');
+  const handleSweetsClick = (id: number) => () => history.push(`/sweets/${id}`);
 
   return (
     <IonPage>
@@ -40,50 +50,65 @@ export const ShopDetailPage: React.FC<Props> = ({ match }) => {
           <IonTitle>{selectedShop.name}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class='ion-padding'>
+      <IonShopDetailContent class='ion-padding'>
         <img src={selectedShop.imagePath} alt={selectedShop.name} />
 
-        <IonText>
-          <h1>{selectedShop.name}</h1>
-        </IonText>
+        <ContentUnderImage>
+          <IonText>
+            <h1>{selectedShop.name}</h1>
+          </IonText>
 
-        <IonText>
-          <p>{selectedShop.telephone}</p>
-        </IonText>
+          <IonShopDetailItem lines='none'>
+            <IonIcon icon={call} size='small' slot='start'></IonIcon>
+            <IonLabel>{selectedShop.telephone}</IonLabel>
+          </IonShopDetailItem>
 
-        <IonText>
-          <p>{selectedShop.openingHoursSpecification}</p>
-        </IonText>
+          <IonShopDetailItem lines='none'>
+            <IonIcon icon={time} size='small' slot='start'></IonIcon>
+            <IonLabel>{selectedShop.openingHoursSpecification}</IonLabel>
+          </IonShopDetailItem>
 
-        <IonText>
-          <p>{selectedShop.closed}</p>
-        </IonText>
+          <IonShopDetailItem lines='none'>
+            <IonIcon icon={calendar} size='small' slot='start'></IonIcon>
+            <IonLabel>{selectedShop.closed}</IonLabel>
+          </IonShopDetailItem>
 
-        <IonText>
-          <p>{selectedShop.parking}</p>
-        </IonText>
+          <IonShopDetailItem lines='none'>
+            <IonSopDetaiFontawesomelIcon isMaterial={isMaterial()}>
+              <i className='fas fa-parking'></i>
+            </IonSopDetaiFontawesomelIcon>
+            <IonLabel>{selectedShop.parking}</IonLabel>
+          </IonShopDetailItem>
 
-        <IonText>
-          <p>{selectedShop.eatin}</p>
-        </IonText>
+          <IonShopDetailItem lines='none'>
+            <IonIcon icon={restaurant} size='small' slot='start'></IonIcon>
+            <IonLabel>{selectedShop.eatin}</IonLabel>
+          </IonShopDetailItem>
 
-        <IonText>
-          <a href={selectedShop.url} target='_blank' rel='noopener noreferrer'>
-            {selectedShop.url}
-          </a>
-        </IonText>
+          <IonShopDetailItem lines='none'>
+            <IonIcon icon={link} size='small' slot='start'></IonIcon>
+            <a href={selectedShop.url} target='_blank' rel='noopener noreferrer'>
+              {selectedShop.url}
+            </a>
+          </IonShopDetailItem>
 
-        <IonList>
-          <IonListHeader>取り扱い商品</IonListHeader>
-          <IonGrid fixed>
-            <SquareImageList>
-              {aggregateSweetsByShop[selectedShop.id].map(sweetsId => (
-                <SquareImage key={sweetsId} src={sweets[sweetsId].imagePath} alt={sweets[sweetsId].name} />
-              ))}
-            </SquareImageList>
-          </IonGrid>
-        </IonList>
-      </IonContent>
+          <IonList>
+            <IonListHeader>取り扱い商品</IonListHeader>
+            <IonGrid fixed>
+              <SquareImageList>
+                {aggregateSweetsByShop[selectedShop.id].map(sweetsId => (
+                  <SquareImage
+                    key={sweetsId}
+                    src={sweets[sweetsId].imagePath}
+                    alt={sweets[sweetsId].name}
+                    onClick={handleSweetsClick(sweetsId)}
+                  />
+                ))}
+              </SquareImageList>
+            </IonGrid>
+          </IonList>
+        </ContentUnderImage>
+      </IonShopDetailContent>
     </IonPage>
   );
 };
