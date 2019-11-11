@@ -11,6 +11,8 @@ export enum Color {
   TRANSPARENT = 'transparent',
   BLACK = '#222',
   WHITE = '#fff',
+  WHITE_GRAY = '#eee',
+  GRAY = '#666',
 }
 
 // ベース 16px

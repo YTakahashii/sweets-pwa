@@ -6,18 +6,24 @@ import {
   IonTitle,
   IonButtons,
   IonBackButton,
-  IonContent,
   IonText,
-  IonItem,
   IonLabel,
   IonList,
   IonListHeader,
+  IonIcon,
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
-import styled from 'styled-components';
 import { SquareImageList, SquareImage } from '../../standalones/SquareImageList';
+import { logoYen } from 'ionicons/icons';
+import {
+  IonDescriptionText,
+  IonPriceItem,
+  IonShopNameItem,
+  IonSweetsDetailContent,
+  ContentUnderImage,
+} from './internal/elements';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -48,46 +54,45 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
           <IonTitle>{selectedSweets.name}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent class='ion-padding' ref={contentRef}>
+      <IonSweetsDetailContent class='ion-padding' ref={contentRef}>
         <img src={selectedSweets.imagePath} alt={selectedSweets.name} />
 
-        <IonText>
-          <h1>{selectedSweets.name}</h1>
-        </IonText>
+        <ContentUnderImage>
+          <IonText>
+            <h1>{selectedSweets.name}</h1>
+          </IonText>
 
-        <IonText>
-          <p>{selectedSweets.price}</p>
-        </IonText>
+          <IonPriceItem lines='none'>
+            <IonIcon icon={logoYen} size='small'></IonIcon>
+            <IonLabel>{selectedSweets.price}</IonLabel>
+          </IonPriceItem>
 
-        <IonText>
-          <p>{selectedSweets.description}</p>
-        </IonText>
+          <IonDescriptionText>
+            <p>{selectedSweets.description}</p>
+          </IonDescriptionText>
 
-        <IonList>
-          <IonListHeader>取り扱い店舗</IonListHeader>
-          <ShopNameItem button routerLink={`/shops/${selectedSweets.shop_id}`}>
-            <IonLabel>{shops[selectedSweets.shop_id].name}</IonLabel>
-          </ShopNameItem>
-        </IonList>
+          <IonList>
+            <IonListHeader>取り扱い店舗</IonListHeader>
+            <IonShopNameItem button routerLink={`/shops/${selectedSweets.shop_id}`} lines='none'>
+              <IonLabel>{shops[selectedSweets.shop_id].name}</IonLabel>
+            </IonShopNameItem>
+          </IonList>
 
-        <IonList>
-          <IonListHeader>おすすめ商品</IonListHeader>
-          <SquareImageList>
-            {recommendedSweetsIds.map(id => (
-              <SquareImage
-                key={id}
-                src={sweets[id].imagePath}
-                alt={sweets[id].name}
-                onClick={handleRecommendClick(id)}
-              />
-            ))}
-          </SquareImageList>
-        </IonList>
-      </IonContent>
+          <IonList>
+            <IonListHeader>おすすめ商品</IonListHeader>
+            <SquareImageList>
+              {recommendedSweetsIds.map(id => (
+                <SquareImage
+                  key={id}
+                  src={sweets[id].imagePath}
+                  alt={sweets[id].name}
+                  onClick={handleRecommendClick(id)}
+                />
+              ))}
+            </SquareImageList>
+          </IonList>
+        </ContentUnderImage>
+      </IonSweetsDetailContent>
     </IonPage>
   );
 };
-
-const ShopNameItem = styled(IonItem)`
-  border-radius: 10px;
-`;
