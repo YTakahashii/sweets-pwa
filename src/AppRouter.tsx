@@ -21,6 +21,7 @@ import { ShopDetailPage } from './components/pages/ShopDetail/ShopDetail';
 import { useDispatch } from 'react-redux';
 import { loadData } from './actions/App/ActionCreator';
 import { scrollToTopSweetsListEvent } from './events/event';
+import { SearchBySmallCategoryPage } from './components/pages/SearchBySmallCategory/SearchBySmallCategory';
 
 setupConfig({
   swipeBackEnabled: false,
@@ -43,6 +44,7 @@ export const AppRouter: React.FC = () => {
             <Route path='/sweets' component={SweetsPage} exact={true} />
             <Route path='/sweets/:id' component={SweetsDetailPage} />
             <Route path='/search' component={SearchPage} exact={true} />
+            <Route path='/search/large_categories/:id' component={SearchBySmallCategoryPage} exact={true} />
             <Route path='/maps' component={MapsPage} exact={true} />
             <Route path='/favorites' component={FavoritesPage} exact={true} />
             <Route path='/shops/:id' component={ShopDetailPage} exact={true} />
