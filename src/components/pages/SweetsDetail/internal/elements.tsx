@@ -21,5 +21,9 @@ export const IonSweetsDetailContent = styled(IonContent)`
 `;
 
 export const ContentUnderImage = styled.div`
-  padding: ${Space * 2}px;
+  padding: 0px ${Space * 2}px ${Space * 2}px;
+`;
+
+export const SweetsName = styled.h1`
+  margin: 0px;
 `;

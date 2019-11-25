@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import {
   IonPage,
   IonHeader,
@@ -11,19 +11,22 @@ import {
   IonList,
   IonListHeader,
   IonIcon,
+  IonButton,
 } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../states';
 import { SquareImageList, SquareImage } from '../../standalones/SquareImageList';
-import { logoYen } from 'ionicons/icons';
+import { share, heart, heartEmpty, logoYen } from 'ionicons/icons';
 import {
   IonDescriptionText,
   IonPriceItem,
   IonShopNameItem,
   IonSweetsDetailContent,
   ContentUnderImage,
+  SweetsName,
 } from './internal/elements';
+import { registerFavoriteSweets, unregisterFavoriteSweets } from '../../../actions/Sweets/ActionCreator';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -34,15 +37,34 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
   const aggregatedSweetsByCategory = useSelector<RootState, RootState['smallCategory']['aggregatedSweetsId']>(
     state => state.smallCategory.aggregatedSweetsId
   );
+  const favorites = useSelector<RootState, RootState['sweets']['favorites']>(state => state.sweets.favorites);
+  const isFavorite = favorites ? !!favorites.find(fav => fav === parseInt(match.params.id)) : false;
   const recommendedSweetsIds = selectedSweets.small_category_ids.flatMap(id => aggregatedSweetsByCategory[id]);
   const contentRef = useRef<HTMLIonContentElement>(null);
+  const [favoriteIcon, setFavoriteIcon] = useState(heartEmpty);
   const handleRecommendClick = (id: number) => () => history.push(`/sweets/${id}`);
+  const dispatch = useDispatch();
+  const handleFavorite = () => {
+    if (isFavorite) {
+      dispatch(unregisterFavoriteSweets({ id: parseInt(match.params.id) }));
+    } else {
+      dispatch(registerFavoriteSweets({ id: parseInt(match.params.id) }));
+    }
+  };
 
   useLayoutEffect(() => {
     if (contentRef.current) {
       contentRef.current.scrollToTop();
     }
   }, [match.params.id]);
+
+  useEffect(() => {
+    if (isFavorite) {
+      setFavoriteIcon(heart);
+    } else {
+      setFavoriteIcon(heartEmpty);
+    }
+  }, [isFavorite]);
 
   return (
     <IonPage>
@@ -52,14 +74,21 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
             <IonBackButton defaultHref='/sweets' text='' />
           </IonButtons>
           <IonTitle>{selectedSweets.name}</IonTitle>
+          <IonButtons slot='end'>
+            <IonButton onClick={handleFavorite}>
+              <IonIcon icon={favoriteIcon}></IonIcon>
+            </IonButton>
+            <IonButton>
+              <IonIcon icon={share}></IonIcon>
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonSweetsDetailContent class='ion-padding' ref={contentRef}>
         <img src={selectedSweets.imagePath} alt={selectedSweets.name} />
-
         <ContentUnderImage>
           <IonText>
-            <h1>{selectedSweets.name}</h1>
+            <SweetsName>{selectedSweets.name}</SweetsName>
           </IonText>
 
           <IonPriceItem lines='none'>
