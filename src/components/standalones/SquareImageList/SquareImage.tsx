@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import useComponentSize from '@rehooks/component-size';
+import { useWindowSize } from '../../../hooks/useWindowSize';
 
 const Wrapper = styled.li`
   display: flex;
@@ -17,12 +17,12 @@ type Props = {
 };
 
 export const SquareImage: React.FC<Props> = ({ src, alt, onClick }) => {
-  const targetRef = useRef<HTMLLIElement>(null);
-  const size = useComponentSize(targetRef);
+  const windowSize = useWindowSize();
+  const height = Math.ceil((windowSize.innerWidth - 40) / 3);
 
   return (
-    <Wrapper ref={targetRef}>
-      <Img src={src} alt={alt} onClick={onClick} height={size.width} />
+    <Wrapper>
+      <Img src={src} alt={alt} onClick={onClick} height={height} />
     </Wrapper>
   );
 };
