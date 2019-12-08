@@ -39,8 +39,9 @@ const middlewares = [logger, sagaMiddleware];
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['entities', 'sweets', 'shop', 'largeCategory', 'smallCategory'],
+  whitelist: ['entities', 'shop', 'largeCategory', 'smallCategory'],
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(...middlewares)));
 const persistor = persistStore(store);
