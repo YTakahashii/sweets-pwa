@@ -14,20 +14,24 @@ import {
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
 import { SweetsItem } from '../../../infrastructures/models';
+import {
+  SearchResaultNotFound,
+  SearchResaultNotFoundTitle,
+  SearchResaultNotFoundDescription,
+} from './internal/elements';
 
 export const SearchPage: React.FC = () => {
   const sweets = useSelector<RootState, RootState['entities']['sweets']>(state => state.entities.sweets);
   const [filteredSweets, setFilteredSweets] = useState<SweetsItem[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearchInput = (e: React.FormEvent<HTMLIonSearchbarElement>) => {
-    // console.log(e.currentTarget.value);
-    const searchQuery = e.currentTarget.value;
-    if (searchQuery !== null && searchQuery !== undefined) {
-      if (searchQuery.length === 0) {
-        setFilteredSweets([]);
-      } else {
-        setFilteredSweets(Object.values(sweets).filter(s => s.name.includes(searchQuery)));
-      }
+    const value = e.currentTarget.value ? e.currentTarget.value : '';
+    setSearchQuery(value);
+    if (searchQuery.length <= 1) {
+      setFilteredSweets([]);
+    } else {
+      setFilteredSweets(Object.values(sweets).filter(s => s.name.includes(searchQuery)));
     }
   };
 
@@ -38,11 +42,20 @@ export const SearchPage: React.FC = () => {
           <IonTitle>検索</IonTitle>
         </IonToolbar>
         <IonToolbar>
-          <IonSearchbar placeholder='スイーツ名で検索' onInput={handleSearchInput}></IonSearchbar>
+          <IonSearchbar placeholder='スイーツ名で検索' onInput={handleSearchInput} value={searchQuery}></IonSearchbar>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {filteredSweets.length > 0 ? <SearchResaultList filteredSweets={filteredSweets} /> : <LargeCategoryList />}
+        {filteredSweets.length > 0 ? (
+          <SearchResaultList filteredSweets={filteredSweets} />
+        ) : searchQuery.length === 0 ? (
+          <LargeCategoryList />
+        ) : (
+          <SearchResaultNotFound>
+            <SearchResaultNotFoundTitle>結果無し</SearchResaultNotFoundTitle>
+            <SearchResaultNotFoundDescription>検索結果と一致するものはありません。</SearchResaultNotFoundDescription>
+          </SearchResaultNotFound>
+        )}
       </IonContent>
     </IonPage>
   );
