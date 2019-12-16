@@ -107,19 +107,21 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
             </IonShopNameItem>
           </IonList>
 
-          <IonList>
-            <IonListHeader>おすすめ商品</IonListHeader>
-            <SquareImageList>
-              {recommendedSweetsIds.map(id => (
-                <SquareImage
-                  key={id}
-                  src={sweets[id].imagePath}
-                  alt={sweets[id].name}
-                  onClick={handleRecommendClick(id)}
-                />
-              ))}
-            </SquareImageList>
-          </IonList>
+          {recommendedSweetsIds.length > 0 && (
+            <IonList>
+              <IonListHeader>おすすめ商品</IonListHeader>
+              <SquareImageList>
+                {recommendedSweetsIds.map(id => (
+                  <SquareImage
+                    key={id}
+                    src={sweets[id].imagePath}
+                    alt={sweets[id].name}
+                    onClick={handleRecommendClick(id)}
+                  />
+                ))}
+              </SquareImageList>
+            </IonList>
+          )}
         </ContentUnderImage>
       </IonSweetsDetailContent>
     </IonPage>
