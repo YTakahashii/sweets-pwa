@@ -70,7 +70,7 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons>
+          <IonButtons slot='start'>
             <IonBackButton defaultHref='/sweets' text='' />
           </IonButtons>
           <IonTitle>{selectedSweets.name}</IonTitle>
