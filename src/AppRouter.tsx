@@ -41,14 +41,14 @@ export const AppRouter: React.FC = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route path='/sweets' component={SweetsPage} exact={true} />
+            <Route path={['/', '/sweets']} component={SweetsPage} exact={true} />
             <Route path='/sweets/:id' component={SweetsDetailPage} />
             <Route path='/search' component={SearchPage} exact={true} />
             <Route path='/search/large_categories/:id' component={SearchBySmallCategoryPage} exact={true} />
             <Route path='/maps' component={MapsPage} exact={true} />
             <Route path='/favorites' component={FavoritesPage} exact={true} />
             <Route path='/shops/:id' component={ShopDetailPage} exact={true} />
-            <Route path='/' render={() => <Redirect to='/sweets' />} exact={true} />
+            <Redirect from='/' to='/sweets' />
           </IonRouterOutlet>
           <IonTabBar slot='bottom'>
             <IonTabButton tab='sweets' href='/sweets' onClick={handleSweetsTab} defaultChecked>
