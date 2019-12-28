@@ -63,7 +63,7 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
 
   return (
     <IonPage>
-      <IonHeader translucent>
+      <IonHeader>
         <IonToolbar>
           {smallCategoryId && typeof smallCategoryId === 'string' && (
             <IonButtons>
