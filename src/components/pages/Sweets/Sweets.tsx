@@ -76,7 +76,7 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
           <IonTitle>{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen ref={contentRef}>
+      <IonContent id='main-content' ref={contentRef}>
         {renderSweets.map(s => (
           <SweetsCard key={s.id} sweetsItem={s} shopName={shops[s.shop_id].name} />
         ))}

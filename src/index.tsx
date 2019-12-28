@@ -3,7 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ServiceWorkerUpdatePrompt } from './ServiceWorkerUpdatePrompt';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-serviceWorker.register();
+serviceWorker.register({
+  onUpdate: registration => {
+    if (registration.waiting) {
+      ReactDOM.render(
+        <ServiceWorkerUpdatePrompt registration={registration} />,
+        document.querySelector('#main-content')
+      );
+    }
+  },
+});

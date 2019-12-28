@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
 
 export const MapsPage: React.FC = () => (
   <IonPage>
@@ -8,5 +8,6 @@ export const MapsPage: React.FC = () => (
         <IonTitle>マップ</IonTitle>
       </IonToolbar>
     </IonHeader>
+    <IonContent></IonContent>
   </IonPage>
 );
