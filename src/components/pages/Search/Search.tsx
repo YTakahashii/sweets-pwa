@@ -28,11 +28,15 @@ export const SearchPage: React.FC = () => {
   const handleSearchInput = (e: React.FormEvent<HTMLIonSearchbarElement>) => {
     const value = e.currentTarget.value ? e.currentTarget.value : '';
     setSearchQuery(value);
-    if (searchQuery.length <= 1) {
-      setFilteredSweets([]);
+    if (value) {
+      setFilteredSweets(Object.values(sweets).filter(s => s.name.includes(value)));
     } else {
-      setFilteredSweets(Object.values(sweets).filter(s => s.name.includes(searchQuery)));
+      setFilteredSweets([]);
     }
+  };
+
+  const handleClear = () => {
+    setSearchQuery('');
   };
 
   return (
@@ -42,19 +46,24 @@ export const SearchPage: React.FC = () => {
           <IonTitle>検索</IonTitle>
         </IonToolbar>
         <IonToolbar>
-          <IonSearchbar placeholder='スイーツ名で検索' onInput={handleSearchInput} value={searchQuery}></IonSearchbar>
+          <IonSearchbar
+            placeholder='スイーツ名で検索'
+            onInput={handleSearchInput}
+            value={searchQuery}
+            onIonClear={handleClear}
+          ></IonSearchbar>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {filteredSweets.length > 0 ? (
-          <SearchResaultList filteredSweets={filteredSweets} />
-        ) : searchQuery.length === 0 ? (
+        {searchQuery.length === 0 ? (
           <LargeCategoryList />
-        ) : (
+        ) : filteredSweets.length === 0 ? (
           <SearchResaultNotFound>
             <SearchResaultNotFoundTitle>結果無し</SearchResaultNotFoundTitle>
             <SearchResaultNotFoundDescription>検索結果と一致するものはありません。</SearchResaultNotFoundDescription>
           </SearchResaultNotFound>
+        ) : (
+          <SearchResaultList filteredSweets={filteredSweets} />
         )}
       </IonContent>
     </IonPage>
