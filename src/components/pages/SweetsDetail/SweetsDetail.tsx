@@ -39,7 +39,9 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
   );
   const favorites = useSelector<RootState, RootState['sweets']['favorites']>(state => state.sweets.favorites);
   const isFavorite = favorites ? !!favorites.find(fav => fav === parseInt(match.params.id)) : false;
-  const recommendedSweetsIds = selectedSweets.small_category_ids.flatMap(id => aggregatedSweetsByCategory[id]);
+  const recommendedSweetsIds = selectedSweets.small_category_ids.flatMap(id =>
+    aggregatedSweetsByCategory[id].filter(id => id !== selectedSweets.id)
+  );
   const contentRef = useRef<HTMLIonContentElement>(null);
   const [favoriteIcon, setFavoriteIcon] = useState(heartEmpty);
   const handleRecommendClick = (id: number) => () => history.push(`/sweets/${id}`);
