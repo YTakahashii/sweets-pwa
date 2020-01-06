@@ -27,6 +27,7 @@ import {
   SweetsName,
 } from './internal/elements';
 import { registerFavoriteSweets, unregisterFavoriteSweets } from '../../../actions/Sweets/ActionCreator';
+import { httpToHttps } from '../../../utils/OfficialImageUtil';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -87,7 +88,7 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
         </IonToolbar>
       </IonHeader>
       <IonSweetsDetailContent class='ion-padding' ref={contentRef}>
-        <img src={selectedSweets.imagePath} alt={selectedSweets.name} />
+        <img src={httpToHttps(selectedSweets.imagePath)} alt={selectedSweets.name} />
         <ContentUnderImage>
           <IonText>
             <SweetsName>{selectedSweets.name}</SweetsName>
@@ -116,7 +117,7 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
                 {recommendedSweetsIds.map(id => (
                   <SquareImage
                     key={id}
-                    src={sweets[id].imagePath}
+                    src={httpToHttps(sweets[id].imagePath)}
                     alt={sweets[id].name}
                     onClick={handleRecommendClick(id)}
                   />

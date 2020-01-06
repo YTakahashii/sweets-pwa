@@ -25,6 +25,7 @@ import {
 } from './internal/elements';
 import { call, time, calendar, restaurant, link } from 'ionicons/icons';
 import { isMaterial } from '../../../utils/isMaterial';
+import { httpToHttps } from '../../../utils/OfficialImageUtil';
 
 type Props = RouteComponentProps<{ id: string }>;
 
@@ -51,7 +52,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
         </IonToolbar>
       </IonHeader>
       <IonShopDetailContent class='ion-padding'>
-        <img src={selectedShop.imagePath} alt={selectedShop.name} />
+        <img src={httpToHttps(selectedShop.imagePath)} alt={selectedShop.name} />
 
         <ContentUnderImage>
           <IonText>
@@ -99,7 +100,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
                 {aggregateSweetsByShop[selectedShop.id].map(sweetsId => (
                   <SquareImage
                     key={sweetsId}
-                    src={sweets[sweetsId].imagePath}
+                    src={httpToHttps(sweets[sweetsId].imagePath)}
                     alt={sweets[sweetsId].name}
                     onClick={handleSweetsClick(sweetsId)}
                   />

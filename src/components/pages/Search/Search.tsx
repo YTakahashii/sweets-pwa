@@ -19,6 +19,7 @@ import {
   SearchResaultNotFoundTitle,
   SearchResaultNotFoundDescription,
 } from './internal/elements';
+import { httpToHttps } from '../../../utils/OfficialImageUtil';
 
 export const SearchPage: React.FC = () => {
   const sweets = useSelector<RootState, RootState['entities']['sweets']>(state => state.entities.sweets);
@@ -81,7 +82,7 @@ const SearchResaultList: React.FC<Props> = ({ filteredSweets }) => {
       {filteredSweets.map(s => (
         <IonItem key={s.id} button routerLink={`/sweets/${s.id}`}>
           <IonThumbnail slot='start'>
-            <img src={s.imagePath} alt='' />
+            <img src={httpToHttps(s.imagePath)} alt={s.name} />
           </IonThumbnail>
           <IonLabel>
             <h2>{s.name}</h2>

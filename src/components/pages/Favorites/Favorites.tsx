@@ -12,10 +12,12 @@ import {
 } from '@ionic/react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
+import { httpToHttps } from '../../../utils/OfficialImageUtil';
 
 export const FavoritesPage: React.FC = () => {
   const sweets = useSelector<RootState, RootState['entities']['sweets']>(state => state.entities.sweets);
   const favorites = useSelector<RootState, RootState['sweets']['favorites']>(state => state.sweets.favorites);
+
   return (
     <IonPage>
       <IonHeader>
@@ -28,7 +30,7 @@ export const FavoritesPage: React.FC = () => {
           {favorites.map(id => (
             <IonItem key={id} button routerLink={`/sweets/${id}`}>
               <IonThumbnail slot='start'>
-                <img src={sweets[id].imagePath} alt={sweets[id].name} />
+                <img src={`${httpToHttps(sweets[id].imagePath)}`} alt={sweets[id].name} />
               </IonThumbnail>
               <IonLabel>
                 <h2> {sweets[id].name}</h2>
