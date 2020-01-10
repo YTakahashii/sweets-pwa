@@ -62,7 +62,11 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
           <IonShopDetailItem lines='none'>
             <IonIcon icon={call} size='small' slot='start'></IonIcon>
             <IonLabel position='fixed'>電話番号</IonLabel>
-            <IonText>{selectedShop.telephone}</IonText>
+            <IonText>
+              <a href={`tel:${selectedShop.telephone}`} target='_blank' rel='noopener noreferrer'>
+                {selectedShop.telephone}
+              </a>
+            </IonText>
           </IonShopDetailItem>
 
           <IonShopDetailItem lines='none'>
