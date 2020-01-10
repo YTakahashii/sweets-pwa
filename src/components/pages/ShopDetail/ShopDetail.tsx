@@ -61,36 +61,48 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
 
           <IonShopDetailItem lines='none'>
             <IonIcon icon={call} size='small' slot='start'></IonIcon>
-            <IonLabel>{selectedShop.telephone}</IonLabel>
+            <IonLabel position='fixed'>電話番号</IonLabel>
+            <IonText>{selectedShop.telephone}</IonText>
           </IonShopDetailItem>
 
           <IonShopDetailItem lines='none'>
             <IonIcon icon={time} size='small' slot='start'></IonIcon>
-            <IonLabel>{selectedShop.openingHoursSpecification}</IonLabel>
+            <IonLabel position='fixed'>営業時間</IonLabel>
+            <IonText>{selectedShop.openingHoursSpecification}</IonText>
           </IonShopDetailItem>
 
           <IonShopDetailItem lines='none'>
             <IonIcon icon={calendar} size='small' slot='start'></IonIcon>
-            <IonLabel>{selectedShop.closed}</IonLabel>
+            <IonLabel position='fixed'>定休日</IonLabel>
+            <IonText>{selectedShop.closed}</IonText>
           </IonShopDetailItem>
 
           <IonShopDetailItem lines='none'>
             <IonSopDetaiFontawesomelIcon isMaterial={isMaterial()}>
               <i className='fas fa-parking'></i>
             </IonSopDetaiFontawesomelIcon>
-            <IonLabel>{selectedShop.parking}</IonLabel>
+            <IonLabel position='fixed'>駐車場</IonLabel>
+            <IonText>{selectedShop.parking}</IonText>
           </IonShopDetailItem>
 
           <IonShopDetailItem lines='none'>
             <IonIcon icon={restaurant} size='small' slot='start'></IonIcon>
-            <IonLabel>{selectedShop.eatin}</IonLabel>
+            <IonLabel position='fixed'>イートイン</IonLabel>
+            <IonText>{selectedShop.eatin}</IonText>
           </IonShopDetailItem>
 
           <IonShopDetailItem lines='none'>
             <IonIcon icon={link} size='small' slot='start'></IonIcon>
-            <a href={selectedShop.url} target='_blank' rel='noopener noreferrer'>
-              {selectedShop.url}
-            </a>
+            <IonLabel position='fixed'>公式サイト</IonLabel>
+            {selectedShop.url === 'なし' ? (
+              <IonText>なし</IonText>
+            ) : (
+              <IonText>
+                <a href={selectedShop.url} target='_blank' rel='noopener noreferrer'>
+                  {selectedShop.url}
+                </a>
+              </IonText>
+            )}
           </IonShopDetailItem>
 
           <IonList>
