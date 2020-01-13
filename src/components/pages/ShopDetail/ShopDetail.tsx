@@ -38,8 +38,8 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
   );
   const imgRef = useRef<HTMLImageElement>(null);
 
-  const getImgWidth = () => (imgRef.current ? imgRef.current.getBoundingClientRect().width : 'auto');
   const handleSweetsClick = (id: number) => () => history.push(`/sweets/${id}`);
+  const urlReg = /^(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/; // eslint-disable-line no-useless-escape
 
   return (
     <IonPage>
@@ -98,14 +98,14 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
           <IonShopDetailItem lines='none'>
             <IonIcon icon={link} size='small' slot='start'></IonIcon>
             <IonLabel position='fixed'>公式サイト</IonLabel>
-            {selectedShop.url === 'なし' ? (
-              <IonText>なし</IonText>
-            ) : (
+            {selectedShop.url.match(urlReg) ? (
               <IonText>
                 <a href={selectedShop.url} target='_blank' rel='noopener noreferrer'>
                   {selectedShop.url}
                 </a>
               </IonText>
+            ) : (
+              <IonText>なし</IonText>
             )}
           </IonShopDetailItem>
 
