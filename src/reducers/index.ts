@@ -10,7 +10,7 @@ import { persistReducer } from 'redux-persist';
 const sweetsPersistConfig = {
   key: 'sweets',
   storage,
-  whitelist: ['favorites'],
+  whitelist: [],
 };
 
 export const rootReducer = combineReducers({
