@@ -32,7 +32,7 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
     state => state.smallCategory.aggregatedSweetsId
   );
   const contentRef = useRef<HTMLIonContentElement>(null);
-  const [title, setTitle] = useState('スイーツ');
+  const [title, setTitle] = useState('函館スイーツ');
   const smallCategoryId = parse(location.search).sm;
   const [renderSweets, setRenderSweets] = useState<SweetsItem[]>(Object.values(sweets));
   const handleSweetsTab = () => {
@@ -56,7 +56,7 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
         setRenderSweets(filteredSweets);
       }
     } else {
-      setTitle('スイーツ');
+      setTitle('函館スイーツ');
       setRenderSweets(Object.values(sweets));
     }
   });
