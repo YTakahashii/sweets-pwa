@@ -40,15 +40,12 @@ export const AppRouter: React.FC = () => {
           <IonTabBar slot='bottom'>
             <IonTabButton tab='sweets' href='/sweets' onClick={handleSweetsTab} defaultChecked>
               <IonIcon icon={home} />
-              <IonLabel>スイーツ</IonLabel>
             </IonTabButton>
             <IonTabButton tab='search' href='/search'>
               <IonIcon icon={search} />
-              <IonLabel>検索</IonLabel>
             </IonTabButton>
             <IonTabButton tab='favorites' href='/favorites'>
               <IonIcon icon={heart} />
-              <IonLabel>お気に入り</IonLabel>
             </IonTabButton>
           </IonTabBar>
         </IonTabs>
