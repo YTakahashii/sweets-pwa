@@ -34,6 +34,7 @@ export const AppRouter: React.FC = () => {
             <Route path='/search/large_categories/:id' component={SearchBySmallCategoryPage} exact={true} />
             <Route path='/maps' component={MapsPage} exact={true} />
             <Route path='/favorites' component={FavoritesPage} exact={true} />
+            <Route path='/favorites/:id' component={SweetsDetailPage} exact={true} />
             <Route path='/shops/:id' component={ShopDetailPage} exact={true} />
             <Redirect exact from='/' to='/sweets' />
           </IonRouterOutlet>

@@ -28,7 +28,7 @@ export const FavoritesPage: React.FC = () => {
       <IonContent>
         <IonList>
           {favorites.map(id => (
-            <IonItem key={id} button routerLink={`/sweets/${id}`}>
+            <IonItem key={id} button routerLink={`/favorites/${id}`}>
               <IonThumbnail slot='start'>
                 <img src={`${httpToHttps(sweets[id].imagePath)}`} alt={sweets[id].name} />
               </IonThumbnail>
