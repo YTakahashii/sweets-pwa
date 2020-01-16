@@ -111,7 +111,7 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
           </IonList>
 
           {recommendedSweetsIds.length > 0 && (
-            <IonList>
+            <IonList style={{ margin: '0' }}>
               <IonListHeader>おすすめ商品</IonListHeader>
               <SquareImageList>
                 {recommendedSweetsIds.map(id => (

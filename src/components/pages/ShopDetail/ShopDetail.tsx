@@ -108,7 +108,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
             )}
           </IonShopDetailItem>
 
-          <IonList>
+          <IonList style={{ margin: '0' }}>
             <IonListHeader>取り扱い商品</IonListHeader>
             <IonGrid fixed>
               <SquareImageList>

@@ -10,6 +10,7 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  padding: 0;
 `;
 
 export const SquareImageList: React.FC<ComponentPropsWithoutRef<'ul'>> = ({ children, ...rest }) => (
