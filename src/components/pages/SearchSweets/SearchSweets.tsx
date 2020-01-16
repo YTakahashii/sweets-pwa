@@ -2,7 +2,7 @@ import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton } from '@ionic/react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../states';
-import { SweetsCard } from '../Sweets/internal/SweetsCard/SweetsCard';
+import { SweetsCard } from './internal/SweetsCard/SweetsCard';
 import { RouteComponentProps } from 'react-router';
 import {
   SearchResaultNotFound,
