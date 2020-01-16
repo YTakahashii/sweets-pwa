@@ -66,7 +66,7 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
       <IonHeader>
         <IonToolbar>
           {smallCategoryId && typeof smallCategoryId === 'string' && (
-            <IonButtons>
+            <IonButtons slot='start'>
               <IonBackButton
                 defaultHref={`/search/large_categories/${smallCategory[smallCategoryId].large_category_id}`}
                 text={`${largeCategory[smallCategory[smallCategoryId].large_category_id].name}`}

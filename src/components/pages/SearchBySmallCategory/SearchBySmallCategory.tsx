@@ -32,7 +32,7 @@ export const SearchBySmallCategoryPage: React.FC<Props> = ({ match }) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons>
+          <IonButtons slot='start'>
             <IonBackButton defaultHref='/search' text='検索' />
           </IonButtons>
           <IonTitle>{largeCategory[id].name}</IonTitle>
