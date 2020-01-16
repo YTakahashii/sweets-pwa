@@ -39,6 +39,8 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
     if (contentRef.current) {
       contentRef.current.scrollToTop(1000);
     }
+    setTitle('函館スイーツ');
+    setRenderSweets(Object.values(sweets));
   };
 
   useLayoutEffect(() => {
@@ -48,8 +50,8 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
 
   useIonViewWillEnter(() => {
     if (smallCategoryId && typeof smallCategoryId === 'string') {
-      const smCategory = smallCategory[smallCategoryId];
-      if (smCategory) {
+      const smCategory = smallCategory[parseInt(smallCategoryId)];
+      if (smCategory !== undefined) {
         const smallCategoryName = smallCategory[smallCategoryId].name;
         setTitle(smallCategoryName);
         const filteredSweets = aggregatedSweetsId[parseInt(smallCategoryId)].map(sweetsId => sweets[sweetsId]);
