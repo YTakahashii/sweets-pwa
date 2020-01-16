@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { loadData } from './actions/App/ActionCreator';
 import { scrollToTopSweetsListEvent } from './events/event';
 import { SearchBySmallCategoryPage } from './components/pages/SearchBySmallCategory/SearchBySmallCategory';
+import { SearchSweetsPage } from './components/pages/SearchSweets/SearchSweets';
 
 export const AppRouter: React.FC = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export const AppRouter: React.FC = () => {
             <Route path='/sweets/:id' component={SweetsDetailPage} />
             <Route path='/search' component={SearchPage} exact={true} />
             <Route path='/search/large_categories/:id' component={SearchBySmallCategoryPage} exact={true} />
+            <Route path='/search/small_categories/:id' component={SearchSweetsPage} exact={true} />
             <Route path='/maps' component={MapsPage} exact={true} />
             <Route path='/favorites' component={FavoritesPage} exact={true} />
             <Route path='/favorites/:id' component={SweetsDetailPage} exact={true} />

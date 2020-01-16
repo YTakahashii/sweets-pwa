@@ -41,7 +41,7 @@ export const SearchBySmallCategoryPage: React.FC<Props> = ({ match }) => {
       <IonContent>
         <IonList>
           {aggregatedSmallCategory[id].map(id => (
-            <IonItem key={id} button routerLink={`/sweets?sm=${id}`}>
+            <IonItem key={id} button routerLink={`/search/small_categories/${id}`}>
               <IonLabel>
                 <h2>{smallCategory[id].name}</h2>
               </IonLabel>
