@@ -37,7 +37,7 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
     state => state.shop.aggregatedSweetsByShop
   );
 
-  const handleSweetsClick = (id: number) => () => history.push(`/sweets/${id}`);
+  const handleSweetsClick = (id: number) => () => history.push(`/sweets/${id}`, { referrer: '/shops/detail' });
   const urlReg = /^(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/; // eslint-disable-line no-useless-escape
 
   return (

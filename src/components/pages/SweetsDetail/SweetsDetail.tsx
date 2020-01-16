@@ -55,8 +55,8 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
     }
   };
   const handleBackButton = () => {
-    if (history.location.state.referrer === '/sweeets/detail') {
-      // 他のスイーツ詳細ページから開かた場合、1つ前のページに遷移する
+    if (history.location.state.referrer === '/sweeets/detail' || history.location.state.referrer === '/shops/detail') {
+      // 他のスイーツ詳細・店舗詳細ページから開かれた場合、1つ前のページに遷移する
       history.goBack();
     } else {
       // その他のページから遷移してきた場合は /sweets に遷移する
