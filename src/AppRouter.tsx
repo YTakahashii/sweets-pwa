@@ -1,15 +1,6 @@
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import {
-  setupConfig,
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-} from '@ionic/react';
+import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, map, search } from 'ionicons/icons';
 import { SweetsPage } from './components/pages/Sweets/Sweets';
@@ -22,10 +13,6 @@ import { useDispatch } from 'react-redux';
 import { loadData } from './actions/App/ActionCreator';
 import { scrollToTopSweetsListEvent } from './events/event';
 import { SearchBySmallCategoryPage } from './components/pages/SearchBySmallCategory/SearchBySmallCategory';
-
-setupConfig({
-  swipeBackEnabled: false,
-});
 
 export const AppRouter: React.FC = () => {
   const dispatch = useDispatch();
