@@ -5,7 +5,6 @@ import {
   IonToolbar,
   IonTitle,
   IonButtons,
-  IonBackButton,
   IonText,
   IonLabel,
   IonList,
@@ -13,6 +12,7 @@ import {
   IonIcon,
   IonButton,
 } from '@ionic/react';
+import { arrowBack } from 'ionicons/icons';
 import { RouteComponentProps } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../states';
@@ -45,13 +45,21 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
   );
   const contentRef = useRef<HTMLIonContentElement>(null);
   const [favoriteIcon, setFavoriteIcon] = useState(heartEmpty);
-  const handleRecommendClick = (id: number) => () => history.push(`/sweets/${id}`);
+  const handleRecommendClick = (id: number) => () => history.push(`/sweets/${id}`, { referrer: '/sweeets/detail' });
   const dispatch = useDispatch();
   const handleFavorite = () => {
     if (isFavorite) {
       dispatch(unregisterFavoriteSweets({ id: parseInt(match.params.id) }));
     } else {
       dispatch(registerFavoriteSweets({ id: parseInt(match.params.id) }));
+    }
+  };
+  const handleBackButton = () => {
+    // 外部ページから遷移してきた場合は /sweets に遷移する
+    if (history.location.state === undefined) {
+      history.push('/sweets');
+    } else {
+      history.goBack();
     }
   };
 
@@ -74,7 +82,9 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot='start'>
-            <IonBackButton defaultHref='/sweets' text='' />
+            <IonButton onClick={handleBackButton}>
+              <IonIcon icon={arrowBack}></IonIcon>
+            </IonButton>
           </IonButtons>
           <IonTitle>{selectedSweets.name}</IonTitle>
           <IonButtons slot='end'>
