@@ -13,7 +13,7 @@ serviceWorker.register({
     if (registration.waiting) {
       ReactDOM.render(
         <ServiceWorkerUpdatePrompt registration={registration} />,
-        document.querySelector('#main-content')
+        document.querySelector('.sw-update-modal')
       );
     }
   },

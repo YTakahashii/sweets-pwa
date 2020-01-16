@@ -76,7 +76,8 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
           <IonTitle>{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent id='main-content' ref={contentRef}>
+      <IonContent ref={contentRef}>
+        <div className='sw-update-modal' />
         {renderSweets.map(s => (
           <SweetsCard key={s.id} sweetsItem={s} shopName={shops[s.shop_id].name} />
         ))}

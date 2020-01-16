@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IonAlert } from '@ionic/react';
 
 export const ServiceWorkerUpdatePrompt: React.FC<{ registration: ServiceWorkerRegistration }> = ({ registration }) => {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(!!registration.waiting);
 
   const handleDismiss = () => {
     setOpen(false);

@@ -62,7 +62,7 @@ function registerValidSW(swUrl: string, config?: Config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
-      if (registration.waiting) {
+      if (registration.waiting && registration.installing == null) {
         if (config && config.onUpdate) {
           config.onUpdate(registration);
         }
@@ -73,12 +73,6 @@ function registerValidSW(swUrl: string, config?: Config) {
           return;
         }
         installingWorker.onstatechange = () => {
-          if (registration.waiting) {
-            // Prompt user to update service workers
-            if (config && config.onUpdate) {
-              config.onUpdate(registration);
-            }
-          }
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
               // At this point, the updated precached content has been fetched,
