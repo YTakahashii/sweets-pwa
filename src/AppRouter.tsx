@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { home, heart, map, search } from 'ionicons/icons';
+import { home, heart, search } from 'ionicons/icons';
 import { SweetsPage } from './components/pages/Sweets/Sweets';
 import { SweetsDetailPage } from './components/pages/SweetsDetail/SweetsDetail';
 import { MapsPage } from './components/pages/Maps/Maps';
@@ -45,10 +45,6 @@ export const AppRouter: React.FC = () => {
             <IonTabButton tab='search' href='/search'>
               <IonIcon icon={search} />
               <IonLabel>検索</IonLabel>
-            </IonTabButton>
-            <IonTabButton tab='maps' href='/maps'>
-              <IonIcon icon={map} />
-              <IonLabel>マップ</IonLabel>
             </IonTabButton>
             <IonTabButton tab='favorites' href='/favorites'>
               <IonIcon icon={heart} />
