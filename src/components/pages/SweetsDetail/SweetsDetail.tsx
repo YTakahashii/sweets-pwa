@@ -61,9 +61,14 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
       history.goBack();
     } else {
       // その他のページから遷移してきた場合は /sweets に遷移する
-      history.push('/sweets');
+      if (match.path.includes('/favorites')) {
+        history.push('/favorites');
+      } else {
+        history.push('/sweets');
+      }
     }
   };
+  console.log(match.path);
 
   useLayoutEffect(() => {
     if (contentRef.current) {
