@@ -27,7 +27,7 @@ export const AppRouter: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <IonTabs>
-          <IonRouterOutlet>
+          <IonRouterOutlet animated={false}>
             <Route path={['/', '/sweets']} component={SweetsPage} exact={true} />
             <Route path='/sweets/:id' component={SweetsDetailPage} />
             <Route path='/search' component={SearchPage} exact={true} />
