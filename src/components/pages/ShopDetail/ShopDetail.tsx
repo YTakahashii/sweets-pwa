@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
   IonPage,
   IonHeader,
@@ -36,7 +36,6 @@ export const ShopDetailPage: React.FC<Props> = ({ match, history }) => {
   const aggregateSweetsByShop = useSelector<RootState, RootState['shop']['aggregatedSweetsByShop']>(
     state => state.shop.aggregatedSweetsByShop
   );
-  const imgRef = useRef<HTMLImageElement>(null);
 
   const handleSweetsClick = (id: number) => () => history.push(`/sweets/${id}`);
   const urlReg = /^(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/; // eslint-disable-line no-useless-escape

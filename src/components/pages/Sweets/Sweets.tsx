@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import {
   IonPage,
   IonHeader,
@@ -44,7 +44,7 @@ export const SweetsPage: React.FC<Props> = ({ location }) => {
   useLayoutEffect(() => {
     document.addEventListener(AmahakoEvent.ScrollToTopSweetsList, handleSweetsTab, false);
     return document.removeEventListener(AmahakoEvent.ScrollToTopSweetsList, handleSweetsTab, true);
-  });
+  }, []);
 
   useIonViewWillEnter(() => {
     if (smallCategoryId && typeof smallCategoryId === 'string') {
