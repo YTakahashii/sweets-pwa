@@ -17,7 +17,7 @@ import { RouteComponentProps } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../states';
 import { SquareImageList, SquareImage } from '../../standalones/SquareImageList';
-import { share, heart, heartEmpty, logoYen } from 'ionicons/icons';
+import { heart, heartEmpty, logoYen } from 'ionicons/icons';
 import {
   IonDescriptionText,
   IonPriceItem,
@@ -90,9 +90,6 @@ export const SweetsDetailPage: React.FC<Props> = ({ match, history }) => {
           <IonButtons slot='end'>
             <IonButton onClick={handleFavorite}>
               <IonIcon icon={favoriteIcon}></IonIcon>
-            </IonButton>
-            <IonButton>
-              <IonIcon icon={share}></IonIcon>
             </IonButton>
           </IonButtons>
         </IonToolbar>
