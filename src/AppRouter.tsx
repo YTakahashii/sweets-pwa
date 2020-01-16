@@ -22,7 +22,7 @@ export const AppRouter: React.FC = () => {
   });
 
   const handleSweetsTab = () => document.dispatchEvent(scrollToTopSweetsListEvent);
-
+  console.log(process.env.PUBLIC_URL, 'PUBLIC_URL');
   return (
     <IonApp>
       <IonReactRouter>
