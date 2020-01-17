@@ -20,6 +20,7 @@ import {
   SearchResaultNotFoundDescription,
 } from './internal/elements';
 import { httpToHttps } from '../../../utils/OfficialImageUtil';
+import { useHistory } from 'react-router';
 
 export const SearchPage: React.FC = () => {
   const sweets = useSelector<RootState, RootState['entities']['sweets']>(state => state.entities.sweets);
@@ -77,10 +78,15 @@ type Props = {
 
 const SearchResaultList: React.FC<Props> = ({ filteredSweets }) => {
   const shops = useSelector<RootState, RootState['entities']['shop']>(state => state.entities.shop);
+  const history = useHistory();
+  const handleClick = (id: number) => () => {
+    history.push(`/sweets/${id}`, { referrer: '/search' });
+  };
+
   return (
     <IonList>
       {filteredSweets.map(s => (
-        <IonItem key={s.id} button routerLink={`/sweets/${s.id}`}>
+        <IonItem key={s.id} button onClick={handleClick(s.id)}>
           <IonThumbnail slot='start'>
             <img src={httpToHttps(s.imagePath)} alt={s.name} />
           </IonThumbnail>
